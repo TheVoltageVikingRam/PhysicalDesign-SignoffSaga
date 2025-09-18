@@ -118,10 +118,12 @@ set mylist {1 2 3 4 5}
 set sublist [lrange $mylist 1 3 ]; #Get elements from index 1 to 3
 puts "Sublist from index 1 to 3: $sublist"
 
-set mylist {orange apple banana01 cherry pineapple guava mango litchi}
+set mylist {orange apple01 banana01 cherry pineapple guava mango01 litchi}
 set fruit banana
 set index [lsearch -exact $mylist $fruit]
-set index1 [lsearch -regexp $mylist "01"]
+
+#regex is to search for a particular pattern
+set index1 [lsearch -regexp -all $mylist {01$}]
 puts "Index of $fruit : $index"
 puts "Index of $fruit : $index1"
 
