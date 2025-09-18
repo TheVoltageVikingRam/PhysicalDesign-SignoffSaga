@@ -108,5 +108,20 @@ set newlist [ linsert $mylist 2 3 ];  # inserts 3 at index 2
 puts "List after insertion : $newlist";
 
 set mylist {a b c d e}
-set newlist [ lreplace $mylist 1 1 x y]; #Replace b,c,d with x y
+puts "list before replacement $mylist"
+#lreplace <listname> <range of index> <value to be replaced>
+set newlist [ lreplace $mylist 1 3 "Ram" "Tripathi"]; #Replace b,c,d with x y
 puts "List after replacement : $newlist"
+
+set mylist {1 2 3 4 5}
+#lrange <list <range of index>
+set sublist [lrange $mylist 1 3 ]; #Get elements from index 1 to 3
+puts "Sublist from index 1 to 3: $sublist"
+
+set mylist {orange apple banana01 cherry pineapple guava mango litchi}
+set fruit banana
+set index [lsearch -exact $mylist $fruit]
+set index1 [lsearch -regexp $mylist "01"]
+puts "Index of $fruit : $index"
+puts "Index of $fruit : $index1"
+
