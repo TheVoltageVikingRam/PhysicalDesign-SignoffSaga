@@ -52,3 +52,19 @@ set a 6
 set b 3
 set result [expr { $a ^ $b }]
 puts "Bitwise XOR: $result "
+
+#Bitwise NOT
+set a 6
+set result [expr (~$a)]
+puts "Bitwise NOT: $result "; #Output: 5 Binary 101
+#Tcl handles integers as signed 32-bit, so ~6 produces -7
+# In a 32-bit signed integer , the most significant bit (MSB) is the sign bit 
+#The result 11111111 11111111 11111111 11111001 is interpreted as -7
+
+set a 6
+set result [expr {$a <<1}]
+puts "Left Shift: $result "; #Output 12 (binary 1100) (multiply by 2)
+
+set a 6
+set result [expr {$a >> 1}]
+puts "Right shift : $result ";
