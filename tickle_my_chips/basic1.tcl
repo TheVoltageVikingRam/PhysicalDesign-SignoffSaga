@@ -37,7 +37,18 @@ puts "Exponent : $exponent"
 
 
 
-// set mylist {1 2 3 4 5}
-// set first {lindex $mylist 0}
-set last {lindex $mylist end}
+# set mylist {1 2 3 4 5}
+# set first {lindex $mylist 0}
+# set last {lindex $mylist end}
 
+#Bitwise OR
+set a 8
+set b 10
+set result [expr {$a | $b} ]
+puts "Bitwise OR: $result "
+
+#Bitwise XOR
+set a 6
+set b 3
+set result [expr { $a ^ $b }]
+puts "Bitwise XOR: $result "
