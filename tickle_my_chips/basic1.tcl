@@ -68,3 +68,45 @@ puts "Left Shift: $result "; #Output 12 (binary 1100) (multiply by 2)
 set a 6
 set result [expr {$a >> 1}]
 puts "Right shift : $result ";
+
+#Ternary Operator 
+# expr {condition} > Statement1 : Statement2 
+
+
+set a 10
+set b 20
+set c 30
+set d 40
+
+set result [ expr {$a > $b && $a > $c ? "a is greatest" : " c is greatest " }]; # ($b > $c ? "b is greatest" ; " c is greatest "))]
+puts $result ;
+
+
+#LIst
+
+set mylist {1 2 3 4 5}
+puts "List_mine : $mylist"
+
+set mylist {1 2 3 4 5}
+set len [llength $mylist]
+puts "Length of the list : $len"
+
+set mylist {apple banana cherry orange pineapple}
+set ind 0
+set item [lindex $mylist $ind]; #index starts from 0
+puts "Item at index $ind: $item"
+
+lappend mylist d e f
+puts "List after appending: $mylist"
+
+if { [lindex $mylist 0] == "apple" } {
+puts "Apple is present in the list"
+}
+
+set mylist {1 2 4 5}
+set newlist [ linsert $mylist 2 3 ];  # inserts 3 at index 2
+puts "List after insertion : $newlist";
+
+set mylist {a b c d e}
+set newlist [ lreplace $mylist 1 1 x y]; #Replace b,c,d with x y
+puts "List after replacement : $newlist"
