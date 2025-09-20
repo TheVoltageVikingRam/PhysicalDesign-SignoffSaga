@@ -146,6 +146,9 @@ puts "$i"
 
 #example 2: Multiple variables
 set pairs {1 one 2 two 3 three 4 four} 
+
+#syntax = foreach {<variable1><variable2>} <variale which should be called>
+
 foreach {num word} $pairs {
     puts "$num : $word"
 }
