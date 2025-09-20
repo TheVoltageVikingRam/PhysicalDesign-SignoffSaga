@@ -49,3 +49,47 @@ set last [lindex $mylist end]
 puts "first element : $first"
 puts "last element : $last"
 
+set mylist {apple banana cherry}
+
+lassign $mylist first second third
+puts "First element: $first"
+puts "Second element: $second"
+puts "Third element: $third"
+
+set mylist {a b c d e}
+# Assign the first two elements to variables , the rest of the list goes to "others"
+lassign $mylist first second others
+puts "First: $first"
+puts "second $second"
+puts "Others: $others"
+
+
+lassign {d e} x y z
+puts $x
+puts $y
+puts $z
+
+#Array  - assign values using an index {key}
+#creating an associative array
+#array <name of the array> [<values of the array>]
+
+array set myarray1 {apple red banana yellow cherry red}
+puts [array get myarray1]
+
+#tcl arrays are associative arrays
+#also called as hash maps or dictionaries in other programming languages
+#THey do not guarantee or preserve the order of their elements because the data is
+#stored based on hashed keys for efficient access, not in the order of insertion
+
+#CReating an indexed array
+
+set myarray(0) 10
+set myarray(1) 20
+set myarray(2) 30
+puts [array get myarray]
+
+set colors(red) "FF0000"
+set colors(green) "00FF00"
+set colors(blue) "0000FF"
+
+puts [array names colors]
