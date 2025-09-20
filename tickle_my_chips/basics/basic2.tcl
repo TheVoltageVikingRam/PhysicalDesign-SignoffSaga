@@ -31,9 +31,9 @@ puts "sorted list {decreasing}: $sorted"
 
 set list1 {a b c}
 set list2 {d e f}
+
 set combined [concat $list1  $list2]
 puts "Concatenated list $combined"
-
 set mylist {a b c d}
 set index [lsearch $mylist "c"]
 puts "Index of c : $index"
@@ -92,5 +92,46 @@ set colors(red) "FF0000"
 set colors(green) "00FF00"
 set colors(blue) "0000FF"
 
-puts [array names colors]
- 
+puts [array get colors]
+
+
+set colors(red) "FF0000"
+set colors(green) "00FF00"
+set colors(blue) "GHI"
+set allElements [array get colors]
+puts [array size colors]
+puts "$allElements"
+set a 10
+set b 20
+
+if {$a > $b} {
+    puts "a is greater than b"
+} else {
+    puts "b is greater than or equal to a"
+}
+
+set a 15 
+if {$a < 10} {
+    puts "a is less than 10"
+} elseif {$a==10} {
+    puts "a is equal to 10"
+} else {
+    puts "a is greater than or equal to 10"
+}
+
+set i 1
+while {$i <= 5} {
+    puts $i
+    incr i
+}
+
+for {set i 1} {$i <=5 } {incr i} {
+    puts $i
+}
+
+#Example 1: Iterating through a list
+
+set fruit {apple banana cherry}
+foreach fruit $fruit {
+    puts $fruit
+}
