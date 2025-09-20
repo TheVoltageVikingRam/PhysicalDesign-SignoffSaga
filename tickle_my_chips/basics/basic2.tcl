@@ -73,7 +73,7 @@ puts $z
 #creating an associative array
 #array <name of the array> [<values of the array>]
 
-array set myarray1 {apple red banana yellow cherry red}
+array set myarray1 {apple red banana yellow cherry red rose pineapple}
 puts [array get myarray1]
 
 #tcl arrays are associative arrays
@@ -93,3 +93,4 @@ set colors(green) "00FF00"
 set colors(blue) "0000FF"
 
 puts [array names colors]
+ 
