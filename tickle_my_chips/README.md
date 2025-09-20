@@ -20,7 +20,7 @@ Welcome to the **Basics** section of the Tickle My Chips repository! This direct
 │ Part 1: Syntax  │───►│ Part 2: Control │───►│ Part 3: Functions│
 │ & Operations    │    │ Flow & Logic    │    │ & Procedures    │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
-    [COMPLETE]           [COMING SOON]          [PLANNED]
+    [COMPLETE]           [COMPLETE]             [PLANNED]
 ```
 
 ---
@@ -154,48 +154,95 @@ Beginners starting their Tcl journey, especially those interested in VLSI script
 ---
 
 ### Part 2: Control Flow & Logic
-**File:** `basic2.tcl` | **Status:** [COMING SOON]
+**File:** `basic2.tcl` | **Status:** [COMPLETE]
 
 <details>
-<summary><strong>▶ Click to view planned content</strong></summary>
+<summary><strong>▶ Click to view detailed breakdown</strong></summary>
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
 │                              PART 2                                 │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐              │
-│  │ Conditionals │  │    Loops     │  │   Advanced   │              │
-│  │   if/else    │  │  for/while   │  │   Control    │              │
-│  │   switch     │  │   foreach    │  │  Structures  │              │
+│  │ Conditionals │  │    Loops     │  │    Arrays    │              │
+│  │   if/else    │  │  for/while   │  │ & Advanced   │              │
+│  │   switch     │  │   foreach    │  │    Lists     │              │
 │  └──────────────┘  └──────────────┘  └──────────────┘              │
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
-This section will cover decision-making and repetitive operations in Tcl.
+This section covers decision-making, repetitive operations, and advanced data structures in Tcl.
 
-#### Planned Topics:
+#### Key Topics Covered:
+
+```
+ADVANCED LIST OPERATIONS
+┌─────────────────────────────────────────────────────────────────────────┐
+│  join → Combine    split → Break apart    lsort → Sort elements         │
+│  concat → Merge    lreverse → Flip order   lassign → Destructure        │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+**Advanced List Operations**
+- `join` - Convert list to string with delimiter
+- `split` - Convert string to list using delimiter
+- `lsort` - Sort lists (ascending/descending)
+- `concat` - Merge multiple lists
+- `lreverse` - Reverse list order
+- `lassign` - Destructure lists into variables
+
+```
+ARRAY TYPES & USAGE
+┌─────────────────────────────────────────────────────────────────────────┐
+│  Associative Arrays: array set colors {red FF0000 blue 0000FF}         │
+│  Indexed Arrays: set myarray(0) "value0"                               │
+│  Access: array get, array size                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+**Arrays (Hash Maps)**
+- **Associative Arrays:** Key-value pairs using `array set`
+- **Indexed Arrays:** Traditional array indexing with `arrayname(index)`
+- **Array Operations:** `array get`, `array size` for inspection
+- **Note:** Arrays don't preserve insertion order (hash-based storage)
+
+```
+CONTROL FLOW STRUCTURES
+┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐
+│   Conditionals   │  │      Loops       │  │  Loop Control    │
+│                  │  │                  │  │                  │
+│ if {condition}   │  │ while {cond}     │  │ break - exit     │
+│ elseif {cond}    │  │ for {init;cond}  │  │ continue - skip  │
+│ else             │  │ foreach var list │  │                  │
+└──────────────────┘  └──────────────────┘  └──────────────────┘
+```
 
 **Conditional Statements**
-- `if`, `else`, `elseif` constructs
-- Comparison operators
-- Logical operators (`&&`, `||`, `!`)
-- Nested conditions
+- `if`, `else`, `elseif` constructs with proper syntax
+- Comparison operators (`>`, `<`, `==`, `!=`)
+- Logical operators (`&&`, `||`)
+- Nested ternary operations for complex conditions
 
 **Loops & Iteration**
-- `for` loops with counters
-- `foreach` for list iteration
-- `while` loops for conditions
-- Loop control (`break`, `continue`)
+- `while` loops for condition-based repetition
+- `for` loops with initialization, condition, and increment
+- `foreach` for list/array iteration with multiple variables
+- Index-based iteration using `llength` and `lindex`
 
-**Advanced Control**
-- `switch` statements
-- Error handling basics
-- Flow control best practices
+**Loop Control**
+- `break` - Exit loop immediately
+- `continue` - Skip current iteration
+- `incr` - Increment variables efficiently
 
 #### Learning Outcomes:
-- Implement decision-making logic
-- Create efficient loops
-- Handle different execution paths
-- Build more complex program structures
+- Master conditional logic and decision trees
+- Implement various loop patterns efficiently
+- Work with associative and indexed arrays
+- Perform advanced list manipulations
+- Control program flow with break/continue
+- Handle complex data structures
+
+#### Perfect For:
+Developers ready to build more sophisticated Tcl programs with proper control flow and data management.
 
 </details>
 
@@ -256,10 +303,11 @@ This section will focus on code organization and reusability through custom func
 # Navigate to the basics directory
 cd tickle_mychips/basics
 
-# Run the available script
+# Run the available scripts
 tclsh basic1.tcl
+tclsh basic2.tcl
 
-# More scripts coming soon!
+# Part 3 script coming soon!
 ```
 
 ## Progress Tracker
@@ -269,8 +317,8 @@ tclsh basic1.tcl
 │  PART   │    SCRIPT    │     STATUS      │         KEY FOCUS           │
 ├─────────┼──────────────┼─────────────────┼─────────────────────────────┤
 │    1    │  basic1.tcl  │   [COMPLETE]    │ Syntax, Variables, Lists    │
-│    2    │  basic2.tcl  │ [COMING SOON]   │ Loops, Conditions          │
-│    3    │  basic3.tcl  │   [PLANNED]     │ Functions, Procedures      │
+│    2    │  basic2.tcl  │   [COMPLETE]    │ Arrays, Loops, Conditions   │
+│    3    │  basic3.tcl  │   [PLANNED]     │ Functions, Procedures       │
 └─────────┴──────────────┴─────────────────┴─────────────────────────────┘
 ```
 
