@@ -149,8 +149,28 @@ set pairs {1 one 2 two 3 three 4 four}
 
 #syntax = foreach {<variable1><variable2>} <variale which should be called>
 
-foreach {num word} $pairs {
-    puts "$num : $word"
+foreach {num word } $pairs {
+    puts "$num : $word "
 }
 
 
+#Example: accessing elements by index
+set items {A B C D E}
+for {set i 0} {$i < [llength $items]} {incr i} {
+    puts "Index $i : [lindex $items $i]"
+}
+
+#if and loops
+for {set i 1} {$i <= 10} {incr i} {
+    if {$i == 5} {
+        break
+    }
+    puts $i
+}
+
+for {set i 1} {$i <= 10} {incr i} {
+    if {$i % 2 == 0} {
+        continue
+    }
+    puts $i
+}
