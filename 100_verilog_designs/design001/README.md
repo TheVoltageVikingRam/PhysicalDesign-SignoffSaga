@@ -1,4 +1,3 @@
-
 # Design 001: Basic Logic Gates
 
 ## Overview
@@ -33,7 +32,10 @@ module gates(
 ### Simulation Files
 - **`xrun.history`** - Command history from Xcelium simulator runs
 - **`simvision38839.diag`** - SimVision diagnostic log file
-- **`waveform_xcelium.png`** - Waveform screenshot showing simulation results
+- **`waveform_xcelium.png`** - Waveform screenshot showing simulation results (captured from SimVision)
+
+### Generated Files
+- **`xcelium.d/`** - Xcelium compilation and simulation database directory
 
 ## Truth Table
 
@@ -48,12 +50,14 @@ module gates(
 
 ### Using Xcelium (Cadence)
 ```bash
-# Compile and run simulation with GUI
-xrun -timescale 1ns/1ps -gui +access+r gates.v gates_tb.v
+# Compile and run simulation with GUI and waveform viewer
+xrun gates.v gates_tb.v -access +rec -gui &
 
-# Alternative command with different access options
-xrun gates.v gates_tb.v -access +rec -gui
+# Alternative command with timescale specification
+xrun -timescale 1ns/1ps -gui +access+r gates.v gates_tb.v
 ```
+
+**Note**: The `&` at the end runs the simulation in the background, allowing the waveform viewer to be invoked while keeping the terminal available.
 
 ### Testbench Sequence
 The testbench applies the following input sequence:
@@ -64,6 +68,28 @@ The testbench applies the following input sequence:
 5. `a=0, b=0` for 5ns
 6. `a=1, b=1` for 5ns
 7. Finish simulation
+
+## Waveform Analysis
+The simulation generates comprehensive waveforms showing all gate outputs responding to the input stimulus. The waveform capture demonstrates the complete functionality of all logic gates:
+
+![Waveform Simulation Results](waveform_xcelium.png)
+
+**Waveform Analysis Points:**
+- **Input Signals (a, b)**: Show the test sequence with clear transitions
+- **AND Gate (c)**: High only when both inputs are high
+- **OR Gate (d)**: High when either input is high
+- **XOR Gate (e)**: High when inputs are different
+- **NAND Gate (f)**: Inverted AND operation
+- **NOR Gate (g)**: Inverted OR operation  
+- **XNOR Gate (h)**: Inverted XOR operation
+- **NOT Gate (i)**: Inverted input b
+
+**Viewing Waveforms:**
+1. Run: `xrun gates.v gates_tb.v -access +rec -gui &`
+2. In SimVision, add all signals to the waveform viewer
+3. Run the simulation to observe signal behavior
+4. Use zoom and cursor tools to analyze timing relationships
+5. Verify each gate's truth table against the waveform
 
 ## Key Learning Points
 - Understanding basic logic gate operations
