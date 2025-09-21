@@ -45,7 +45,7 @@ xrun -timescale 1ns/1ps -gui +access+r Boolean.v Boolean_tb.v
 ```
 
 ## Waveform Analysis
-![Waveform Simulation Results](waveform_boolean.png)
+![Waveform Simulation Results](scelium_simulation_boolean.png)
 
 The waveform shows:
 - **Input signals**: a, b, c, d transitions over 5 test cases
