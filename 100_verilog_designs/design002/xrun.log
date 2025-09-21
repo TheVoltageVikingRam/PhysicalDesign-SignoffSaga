@@ -1,0 +1,53 @@
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s001: Started on Sep 22, 2025 at 03:10:42 IST
+xrun
+	-timescale 1ns/1ps
+	-gui
+	+access+r
+	Boolean.v
+	Boolean_tb.v
+Recompiling... reason: file './Boolean_tb.v' is newer than expected.
+	expected: Mon Sep 22 03:05:21 2025
+	actual:   Mon Sep 22 03:10:37 2025
+file: Boolean_tb.v
+	module worklib.exp_tb:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		exp_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.exp:v <0x253b9612>
+			streams:   0, words:     0
+		worklib.exp_tb:v <0x40b17075>
+			streams:   1, words:  3336
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:               4       4
+		Scalar wires:            5       -
+		Initial blocks:          1       1
+		Cont. assignments:       0       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.exp_tb:v
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /home/server2/cadence/installs/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm exp_tb.uut.a exp_tb.uut.b exp_tb.uut.c exp_tb.uut.d exp_tb.uut.y
+Created probe 1
+xcelium> run 500
+Simulation complete via $finish(1) at time 25 NS + 0
+./Boolean_tb.v:14 $finish();
+xcelium> run 600
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> run 600
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> 

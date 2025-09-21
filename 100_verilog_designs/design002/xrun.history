@@ -1,0 +1,6 @@
+#e1(22Sep2025:03:08:59): source ./xcelium.d/env.d/env.history.22Sep2025_03_08_59
+s1(22Sep2025:03:08:59):  xrun -timescale 1ns/1ps Boolean.v Boolean_tb.v -access +gui 
+#e2(22Sep2025:03:10:07): source ./xcelium.d/env.d/env.history.22Sep2025_03_10_07
+s2(22Sep2025:03:10:07):  xrun -timescale 1ns/1ps -gui +access+r Boolean.v Boolean_tb.v 
+#e3(22Sep2025:03:10:43): source ./xcelium.d/env.d/env.history.22Sep2025_03_10_43
+s3(22Sep2025:03:10:43):  xrun -timescale 1ns/1ps -gui +access+r Boolean.v Boolean_tb.v 
