@@ -1,0 +1,10 @@
+#e1(22Sep2025:00:48:17): source ./xcelium.d/env.d/env.history.22Sep2025_00_48_17
+s1(22Sep2025:00:48:17):  xrun gates.v gates_tb.v -access +rec -gui 
+#e2(22Sep2025:00:53:03): source ./xcelium.d/env.d/env.history.22Sep2025_00_53_03
+s2(22Sep2025:00:53:03):  xrun gates.v gates_tb.v -access +rec -gui 
+#e3(22Sep2025:00:55:27): source ./xcelium.d/env.d/env.history.22Sep2025_00_55_27
+s3(22Sep2025:00:55:27):  xrun -timescale 1ns/1ps -gui +access+r and_gate_tb.v and_gate.v 
+#e4(22Sep2025:00:55:33): source ./xcelium.d/env.d/env.history.22Sep2025_00_55_33
+s4(22Sep2025:00:55:33):  xrun -timescale 1ns/1ps -gui +access+r and_gate_tb.v and_gate.v 
+#e5(22Sep2025:00:56:11): source ./xcelium.d/env.d/env.history.22Sep2025_00_56_11
+s5(22Sep2025:00:56:11):  xrun -timescale 1ns/1ps -gui +access+r gates.v gates_tb.v 

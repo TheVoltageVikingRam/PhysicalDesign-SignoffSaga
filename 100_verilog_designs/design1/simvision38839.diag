@@ -1,0 +1,54 @@
+*** Message Type: info ***
+When: Mon Sep 22 00:56:15 IST 2025
+SimVision started.
+Version: TOOL:  simvision(64)   25.03-s001
+User: user3
+Host: hostname1
+Platform: Linux/x86_64/4.18.0-553.74.1.el8_10.x86_64
+Started: Mon Sep 22 00:56:15 IST 2025
+Command: /home/server2/cadence/installs/XCELIUM2503/tools.lnx86/simvision/bin/64bit/simvision.exe -connect dc:hostname1:56967 -64BIT -nocopyright
+Work Directory: /home/server2/Music/ram/100_designs_on_verilog
+ 
+*** Message Type: info ***
+When: Mon Sep 22 00:56:16 IST 2025
+Create browser window: "Design Browser 1"
+ 
+*** Message Type: info ***
+When: Mon Sep 22 00:56:18 IST 2025
+Create console window: "Console"
+ 
+*** Message Type: info ***
+When: Mon Sep 22 00:56:20 IST 2025
+Connect to Simulator
+      Design: worklib.gates_tb:v
+   Languages: verilog
+   Simulator: XM-Sim
+     Version: TOOL: xmsim(64)       25.03-s001
+        User: user3
+        Host: hostname1
+Time Started: Mon Sep 22 00:56:12 IST 2025
+  Process ID: 38776
+   Directory: /home/server2/Music/ram/100_designs_on_verilog
+     Command: xrun -timescale 1ns/1ps -gui +access+r gates.v gates_tb.v
+
+ 
+*** Message Type: info ***
+When: Mon Sep 22 00:56:21 IST 2025
+Create utility window: "Properties"
+ 
+*** Message Type: info ***
+When: Mon Sep 22 00:56:59 IST 2025
+Create waveform window: "Waveform 1"
+ 
+*** Message Type: error ***
+When: Mon Sep 22 01:02:25 IST 2025
+no common data types between the drag source and drop target widgets
+    while executing
+"error "no common data types between the drag source and drop target widgets""
+    (procedure "GetDroppedData" line 6)
+    invoked from within
+"GetDroppedData $time"
+    (procedure "tkdnd::xdnd::HandleXdndDrop" line 9)
+    invoked from within
+"tkdnd::xdnd::HandleXdndDrop 13921635"
+ 
