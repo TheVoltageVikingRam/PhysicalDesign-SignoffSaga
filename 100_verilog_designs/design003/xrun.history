@@ -1,0 +1,8 @@
+#e1(23Sep2025:04:07:30): source ./xcelium.d/env.d/env.history.23Sep2025_04_07_30
+s1(23Sep2025:04:07:30):  xrun -timescale 1ns/1ps -gui +access+r full_adder.v full_adder_tb.v 
+#e2(23Sep2025:04:08:41): source ./xcelium.d/env.d/env.history.23Sep2025_04_08_41
+s2(23Sep2025:04:08:41):  xrun -timescale 1ns/1ps -gui +access+r full_adder.v full_adder_tb.v 
+#e3(23Sep2025:04:11:02): source ./xcelium.d/env.d/env.history.23Sep2025_04_11_02
+s3(23Sep2025:04:11:02):  xrun -timescale 1ns/1ps -gui +access+r full_adder.v full_adder_tb.v 
+#e4(23Sep2025:04:13:03): source ./xcelium.d/env.d/env.history.23Sep2025_04_13_03
+s4(23Sep2025:04:13:03):  xrun -timescale 1ns/1ps -gui +access+r full_adder.v full_adder_tb.v 

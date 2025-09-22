@@ -1,0 +1,27 @@
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s001: Started on Sep 23, 2025 at 04:13:03 IST
+xrun
+	-timescale 1ns/1ps
+	-gui
+	+access+r
+	full_adder.v
+	full_adder_tb.v
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /home/server2/cadence/installs/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm full_adder_tb.uut.a full_adder_tb.uut.b full_adder_tb.uut.cin full_adder_tb.uut.cout full_adder_tb.uut.sum
+Created probe 1
+xcelium> run 200
+Ran until 200 NS + 0
+xcelium> run 150
+Ran until 350 NS + 0
+xcelium> run 150
+Ran until 500 NS + 0
+xcelium> run 100
+Ran until 600 NS + 0
+xcelium> 
