@@ -1,0 +1,32 @@
+#e1(24Sep2025:19:49:09): source ./xcelium.d/env.d/env.history.24Sep2025_19_49_09
+s1(24Sep2025:19:49:09):  xrun -timescale 1ns/1ps +access+r -gui full_sub.v tb_full_sub.v 
+#e2(24Sep2025:19:52:26): source ./xcelium.d/env.d/env.history.24Sep2025_19_52_26
+s2(24Sep2025:19:52:26):  xrun -timescale 1ns/1ps +access+r -gui full_sub.v tb_full_sub.v 
+#e3(24Sep2025:19:54:17): source ./xcelium.d/env.d/env.history.24Sep2025_19_54_17
+s3(24Sep2025:19:54:17):  xrun -timescale 1ns/1ps +access+r -gui full_sub.v tb_full_sub.v 
+#e4(24Sep2025:19:54:46): source ./xcelium.d/env.d/env.history.24Sep2025_19_54_46
+s4(24Sep2025:19:54:46):  xrun -timescale 1ns/1ps +access+r -gui full_sub.v tb_full_sub.v 
+#e5(24Sep2025:19:57:02): source ./xcelium.d/env.d/env.history.24Sep2025_19_57_02
+s5(24Sep2025:19:57:02):  xrun -timescale 1ns/1ps +access+r -gui full_sub.v tb_full_sub.v 
+#e6(24Sep2025:19:58:15): source ./xcelium.d/env.d/env.history.24Sep2025_19_58_15
+s6(24Sep2025:19:58:15):  xrun -timescale 1ns/1ps +access+r -gui full_sub.v tb_full_sub.v 
+#e7(24Sep2025:19:59:18): source ./xcelium.d/env.d/env.history.24Sep2025_19_59_18
+s7(24Sep2025:19:59:18):  xrun -timescale 1ns/1ps +access+r -gui full_sub.v tb_full_sub.v 
+#e8(24Sep2025:20:02:28): source ./xcelium.d/env.d/env.history.24Sep2025_20_02_28
+s8(24Sep2025:20:02:28):  xrun -timescale 1ns/1ps +access+r -gui full_sub.v tb_full_sub.v 
+#e9(24Sep2025:20:04:58): source ./xcelium.d/env.d/env.history.24Sep2025_20_04_58
+s9(24Sep2025:20:04:58):  xrun -timescale 1ns/1ps +access+r -gui full_sub.v tb_full_sub.v 
+#e10(24Sep2025:20:06:11): source ./xcelium.d/env.d/env.history.24Sep2025_20_06_11
+s10(24Sep2025:20:06:11):  xrun -timescale 1ns/1ps +access+r -gui full_sub.v tb_full_sub.v 
+#e11(24Sep2025:20:07:20): source ./xcelium.d/env.d/env.history.24Sep2025_20_07_20
+s11(24Sep2025:20:07:20):  xrun -timescale 1ns/1ps +access+r -gui full_sub.v tb_full_sub.v 
+#e12(24Sep2025:20:08:40): source ./xcelium.d/env.d/env.history.24Sep2025_20_08_40
+s12(24Sep2025:20:08:40):  xrun -timescale 1ns/1ps +access+r -gui full_sub.v tb_full_sub.v 
+#e13(24Sep2025:20:09:22): source ./xcelium.d/env.d/env.history.24Sep2025_20_09_22
+s13(24Sep2025:20:09:22):  xrun -timescale 1ns/1ps +access+r -gui full_sub.v tb_full_sub.v 
+#e14(24Sep2025:20:12:14): source ./xcelium.d/env.d/env.history.24Sep2025_20_12_14
+s14(24Sep2025:20:12:14):  xrun -timescale 1ns/1ps +access+r -gui full_sub.v tb_full_sub.v 
+#e15(24Sep2025:20:12:58): source ./xcelium.d/env.d/env.history.24Sep2025_20_12_58
+s15(24Sep2025:20:12:58):  xrun -timescale 1ns/1ps +access+r -gui full_sub.v tb_full_sub.v 
+#e16(24Sep2025:20:18:33): source ./xcelium.d/env.d/env.history.24Sep2025_20_18_33
+s16(24Sep2025:20:18:33):  xrun -timescale 1ns/1ps +access+r -gui full_sub.v tb_full_sub.v 
