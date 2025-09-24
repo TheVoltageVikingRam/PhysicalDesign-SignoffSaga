@@ -1,0 +1,48 @@
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s001: Started on Sep 24, 2025 at 15:02:37 IST
+xrun
+	-timescale 1ns/1ps
+	+access+r
+	-gui
+	good_mux.v
+	tb_good_mux.v
+file: tb_good_mux.v
+	module worklib.tb_good_mux:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		tb_good_mux
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.good_mux:v <0x69cf2a30>
+			streams:   2, words:   413
+		worklib.tb_good_mux:v <0x43db5a36>
+			streams:   4, words:  1753
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:               4       4
+		Scalar wires:            4       -
+		Always blocks:           4       4
+		Initial blocks:          1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_good_mux:v
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /home/server2/cadence/installs/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb_good_mux.uut.i0 tb_good_mux.uut.i1 tb_good_mux.uut.sel tb_good_mux.uut.y
+Created probe 1
+xcelium> run 200
+Ran until 200 NS + 0
+xcelium> run 250
+Simulation complete via $finish(1) at time 300 NS + 0
+./tb_good_mux.v:26 #300 $finish;
+xcelium> 
