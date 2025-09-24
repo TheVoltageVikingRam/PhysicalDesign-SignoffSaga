@@ -1,0 +1,4 @@
+#e1(24Sep2025:14:59:44): source ./xcelium.d/env.d/env.history.24Sep2025_14_59_44
+s1(24Sep2025:14:59:44):  xrun -timescale 1ns/1ps +access+r -gui good_mux.v tb_good_mux.v 
+#e2(24Sep2025:15:02:38): source ./xcelium.d/env.d/env.history.24Sep2025_15_02_38
+s2(24Sep2025:15:02:38):  xrun -timescale 1ns/1ps +access+r -gui good_mux.v tb_good_mux.v 
