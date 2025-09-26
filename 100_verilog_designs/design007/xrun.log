@@ -1,0 +1,47 @@
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s001: Started on Sep 26, 2025 at 12:22:25 IST
+xrun
+	-timescale 1ns/1ps
+	+access+rwc
+	-gui
+	rca.v
+	rca_tb.v
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		rca_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.fulladder:v <0x41abdd8a>
+			streams:   1, words:   298
+		worklib.rca_tb:v <0x05f93ce6>
+			streams:   4, words:  4356
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 6       3
+		Registers:               3       3
+		Scalar wires:            9       -
+		Expanded wires:          8       2
+		Initial blocks:          1       1
+		Cont. assignments:       4       1
+		Pseudo assignments:      3       -
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.rca_tb:v
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /home/server2/cadence/installs/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm rca_tb.uut.a rca_tb.uut.b rca_tb.uut.cin rca_tb.uut.carry rca_tb.uut.co rca_tb.uut.sum
+Created probe 1
+xcelium> console 2000
+xmsim: *E,TCLERR: invalid command name "console".
+xcelium> run 2000
+Simulation complete via $finish(1) at time 60 NS + 0
+./rca_tb.v:15 $finish();
+xcelium> 
