@@ -1,0 +1,52 @@
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s001: Started on Sep 28, 2025 at 20:22:07 IST
+xrun
+	-timescale 1ns/1ps
+	+access+rwc
+	-gui
+	full_adder.v
+	full_adder_tb.v
+file: full_adder_tb.v
+	module worklib.full_adder_tb:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		full_adder_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.half_adder:v <0x478ed787>
+			streams:   0, words:     0
+		worklib.full_adder_tb:v <0x6e60214c>
+			streams:   4, words:  5347
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 4       3
+		Primitives:              1       1
+		Registers:               3       3
+		Scalar wires:            7       -
+		Initial blocks:          1       1
+		Cont. assignments:       0       2
+		Pseudo assignments:      3       -
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.full_adder_tb:v
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /home/server2/cadence/installs/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm full_adder_tb.uut.a full_adder_tb.uut.b full_adder_tb.uut.c full_adder_tb.uut.sum full_adder_tb.uut.carry
+Created probe 1
+xcelium> run 1500
+Simulation complete via $finish(1) at time 80 NS + 0
+./full_adder_tb.v:25 $finish();
+xcelium> ^C
+xcelium> exit
+...Regained control from SimVision
+-------------------------------------
+TOOL:	xrun(64)	25.03-s001: Exiting on Sep 28, 2025 at 20:24:54 IST  (total: 00:02:47)
