@@ -118,7 +118,7 @@ xrun -timescale 1ns/1ps +access+rwc -gui rca.v rca_tb.v
 ### My Simulation Waveforms
 I captured comprehensive simulation waveforms showing carry propagation and arithmetic operations:
 
-![My RCA Simulation Waveforms - Image not available](xcelium_waveform_ripple_Carry_adder.png)
+![My RCA Simulation Waveforms](xcelium_waveform_ripple_Carry_adder.png)
 
 **Results:** All 6 test cases passed with perfect arithmetic accuracy and proper carry propagation.
 
