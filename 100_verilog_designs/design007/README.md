@@ -10,7 +10,8 @@ In this project, I designed and tested a 4-bit ripple carry adder using hierarch
 2. [My Hierarchical Design Implementation](#2-my-hierarchical-design-implementation)
 3. [Testbench Development](#3-testbench-development)
 4. [My Simulation Results](#4-my-simulation-results)
-5. [Design Analysis](#5-design-analysis)
+5. [Synthesis Results](#5-synthesis-results)
+6. [Design Analysis](#6-design-analysis)
 
 ---
 
@@ -120,11 +121,31 @@ I captured comprehensive simulation waveforms showing carry propagation and arit
 
 ![My RCA Simulation Waveforms](xcelium_waveform_ripple_Carry_adder.png)
 
+*Figure 1: Xcelium SimVision waveforms showing 4-bit RCA operation with carry propagation through all test cases*
+
 **Results:** All 6 test cases passed with perfect arithmetic accuracy and proper carry propagation.
 
 ---
 
-## 5. Design Analysis
+## 5. Synthesis Results
+
+### Synthesized Gate-Level Implementation
+The design was synthesized to show the physical gate-level implementation of the ripple carry adder:
+
+![Synthesized RCA Schematic](synthesized_rca.png)
+
+*Figure 2: Gate-level schematic of the synthesized 4-bit Ripple Carry Adder showing the hierarchical structure and carry chain*
+
+### Synthesis Analysis
+The synthesized design demonstrates:
+- **Modular Structure:** Clear separation of individual full adder blocks
+- **Carry Chain:** Visible carry propagation path from LSB to MSB
+- **Gate Optimization:** Efficient gate-level implementation of arithmetic operations
+- **Hierarchical Design:** Maintained structural hierarchy from RTL to gates
+
+---
+
+## 6. Design Analysis
 
 ### Performance Characteristics
 - **Propagation Delay:** 4 gate delays (carry chain)
@@ -136,8 +157,34 @@ I captured comprehensive simulation waveforms showing carry propagation and arit
 - Simple and intuitive design
 - Easy to understand and verify
 - Modular and scalable architecture
+- Clear hierarchical structure maintained in synthesis
 
 **Limitations:**
 - Carry propagation delay increases with bit width
 - Not suitable for high-speed applications
 - Sequential carry dependency
+
+### Applications
+- **Basic Arithmetic Units:** Foundation for ALU designs
+- **Digital Signal Processing:** Simple addition operations
+- **Microprocessor Design:** Basic arithmetic functionality
+- **Educational Purposes:** Understanding carry propagation concepts
+
+---
+
+## 🎯 Conclusion
+
+This 4-bit Ripple Carry Adder project successfully demonstrates:
+- **Hierarchical Design Methodology:** Using modular full adder building blocks
+- **Comprehensive Verification:** Complete test coverage with visual waveform analysis
+- **Physical Implementation:** Successful synthesis to gate-level netlist
+- **Design Documentation:** Thorough analysis of performance characteristics
+
+The design serves as an excellent foundation for understanding digital arithmetic circuits and demonstrates the complete digital design flow from RTL to synthesis.
+
+---
+
+**Design Status**: ✅ **VERIFIED AND SYNTHESIZED**
+
+**Tools Used**: Cadence Xcelium (Simulation), Cadence Genus (Synthesis)  
+**Last Updated**: September 28, 2025
