@@ -1,0 +1,20 @@
+#e1(28Sep2025:13:34:34): source ./xcelium.d/env.d/env.history.28Sep2025_13_34_34
+s1(28Sep2025:13:34:34):  xrun -timescale 1ns/1ps +access+rwc -gui mux.v mux_tb.v 
+#e2(28Sep2025:13:41:14): source ./xcelium.d/env.d/env.history.28Sep2025_13_41_14
+s2(28Sep2025:13:41:14):  xrun -timescale 1ns/1ps +access+rwc -gui mux.v mux_tb.v 
+#e3(28Sep2025:13:41:48): source ./xcelium.d/env.d/env.history.28Sep2025_13_41_48
+s3(28Sep2025:13:41:48):  xrun -timescale 1ns/1ps +access+rwc -gui mux.v mux_tb.v 
+#e4(28Sep2025:13:44:15): source ./xcelium.d/env.d/env.history.28Sep2025_13_44_15
+s4(28Sep2025:13:44:15):  xrun -timescale 1ns/1ps +access+rwc -gui mux.v mux_tb.v 
+#e5(28Sep2025:13:44:55): source ./xcelium.d/env.d/env.history.28Sep2025_13_44_55
+s5(28Sep2025:13:44:55):  xrun -timescale 1ns/1ps +access+rwc -gui mux.v mux_tb.v 
+#e6(28Sep2025:13:45:16): source ./xcelium.d/env.d/env.history.28Sep2025_13_45_16
+s6(28Sep2025:13:45:16):  xrun -timescale 1ns/1ps +access+rwc -gui mux.v mux_tb.v 
+#e7(28Sep2025:13:47:14): source ./xcelium.d/env.d/env.history.28Sep2025_13_47_14
+s7(28Sep2025:13:47:14):  xrun -timescale 1ns/1ps +access+rwc -gui mux.v mux_tb.v 
+#e8(28Sep2025:13:49:30): source ./xcelium.d/env.d/env.history.28Sep2025_13_49_30
+s8(28Sep2025:13:49:30):  xrun -timescale 1ns/1ps +access+rwc -gui mux.v mux_tb.v 
+#e9(28Sep2025:13:50:34): source ./xcelium.d/env.d/env.history.28Sep2025_13_50_34
+s9(28Sep2025:13:50:34):  xrun -timescale 1ns/1ps +access+rwc -gui mux.v mux_tb.v 
+#e10(28Sep2025:13:51:34): source ./xcelium.d/env.d/env.history.28Sep2025_13_51_34
+s10(28Sep2025:13:51:34):  /home/server2/cadence/installs/XCELIUM2503/tools/bin/64bit/xrun 200 
