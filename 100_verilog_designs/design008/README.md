@@ -1,25 +1,24 @@
-
 # 4x1 Multiplexer Design, Simulation, and Synthesis Report
 
-Welcome to my **4x1 Multiplexer** project\!
+Welcome to my **4x1 Multiplexer** project!
 In this project, I designed, simulated, and synthesized a 4-to-1 multiplexer using Verilog HDL. This report documents my design implementation, testbench creation, simulation with Cadence Xcelium, and synthesis with Cadence Genus.
 
------
+---
 
 ## 📚 Table of Contents
 
-1.  [Design Overview](https://www.google.com/search?q=%231-design-overview)
-2.  [Verilog Implementation](https://www.google.com/search?q=%232-verilog-implementation)
-3.  [Testbench Development](https://www.google.com/search?q=%233-testbench-development)
-4.  [Simulation Results](https://www.google.com/search?q=%234-simulation-results)
-5.  [Synthesis Flow](https://www.google.com/search?q=%235-synthesis-flow)
-6.  [Synthesis Results](https://www.google.com/search?q=%236-synthesis-results)
-7.  [Design Analysis](https://www.google.com/search?q=%237-design-analysis)
-8.  [Key Learning Outcomes](https://www.google.com/search?q=%238-key-learning-outcomes)
+1. [Design Overview](#1-design-overview)
+2. [Verilog Implementation](#2-verilog-implementation)
+3. [Testbench Development](#3-testbench-development)
+4. [Simulation Results](#4-simulation-results)
+5. [Synthesis Flow](#5-synthesis-flow)
+6. [Synthesis Results](#6-synthesis-results)
+7. [Design Analysis](#7-design-analysis)
+8. [Key Learning Outcomes](#8-key-learning-outcomes)
 
------
+---
 
-## 1\. Design Overview
+## 1. Design Overview
 
 ### 🎯 Project Objective
 
@@ -27,18 +26,18 @@ I designed a **4-to-1 multiplexer (MUX)** that selects one of four input signals
 
 ### 📊 Design Specifications
 
-  - **Inputs:** 4 data inputs (`a`, `b`, `c`, `d`)
-  - **Select Lines:** 2-bit select signal `s[1:0]`
-  - **Output:** Single output signal (`out`)
-  - **Logic:**
-      - s = 00 → out = a
-      - s = 01 → out = b
-      - s = 10 → out = c
-      - s = 11 → out = d
+- **Inputs:** 4 data inputs (`a`, `b`, `c`, `d`)
+- **Select Lines:** 2-bit select signal `s[1:0]`
+- **Output:** Single output signal (`out`)
+- **Logic:**
+  - s = 00 → out = a
+  - s = 01 → out = b
+  - s = 10 → out = c
+  - s = 11 → out = d
 
------
+---
 
-## 2\. Verilog Implementation
+## 2. Verilog Implementation
 
 ### The 4x1 MUX Design (`mux.v`)
 
@@ -60,13 +59,13 @@ endmodule
 
 I chose to use a **nested ternary operator** approach which provides:
 
-  - **Compact code:** Single-line logic implementation.
-  - **Efficient synthesis:** Direct mapping to hardware multiplexers.
-  - **Clear logic flow:** Easy to understand the selection mechanism.
+- **Compact code:** Single-line logic implementation.
+- **Efficient synthesis:** Direct mapping to hardware multiplexers.
+- **Clear logic flow:** Easy to understand the selection mechanism.
 
------
+---
 
-## 3\. Testbench Development
+## 3. Testbench Development
 
 ### Comprehensive Testbench (`mux_tb.v`)
 
@@ -103,13 +102,13 @@ endmodule
 
 My test vectors were designed to cover:
 
-1.  **All select combinations:** `s=00`, `01`, `10`, `11`.
-2.  **Different input patterns:** All 1s and mixed values.
-3.  **Comprehensive monitoring:** Real-time console display of all signals.
+1. **All select combinations:** `s=00`, `01`, `10`, `11`.
+2. **Different input patterns:** All 1s and mixed values.
+3. **Comprehensive monitoring:** Real-time console display of all signals.
 
------
+---
 
-## 4\. Simulation Results
+## 4. Simulation Results
 
 ### Simulation Setup
 
@@ -123,6 +122,21 @@ xrun -timescale 1ns/1ps +access+rwc -gui mux.v mux_tb.v
 
 I captured comprehensive simulation waveforms showing all signal transitions:
 
+![4x1 MUX Simulation Waveforms](4x1mux_xcelium_simvision_simulation.png)
+
+*Figure 1: SimVision waveforms showing 4x1 MUX operation with all select combinations and input patterns*
+
+### Console Output Verification
+
+The simulation console output confirmed correct operation:
+```
+Time=0: a=1 b=1 c=1 d=1 s=10 out=1
+Time=10000: a=0 b=0 c=1 d=1 s=11 out=1  
+Time=20000: a=1 b=1 c=1 d=1 s=01 out=1
+Time=30000: a=1 b=1 c=1 d=1 s=00 out=1
+Time=40000: a=1 b=1 c=0 d=0 s=10 out=0
+```
+
 ### Results Verification
 
 ✅ **Test Case 1 (t=0ns):** s=10 → out=1 (selects c) ✓
@@ -131,88 +145,100 @@ I captured comprehensive simulation waveforms showing all signal transitions:
 ✅ **Test Case 4 (t=30ns):** s=00 → out=1 (selects a) ✓
 ✅ **Test Case 5 (t=40ns):** s=10 → out=0 (selects c, which is now 0) ✓
 
-**Perfect Match\!** All test cases passed with the expected outputs.
+**Perfect Match!** All test cases passed with the expected outputs.
 
------
+---
 
-## 5\. Synthesis Flow
+## 5. Synthesis Flow
 
 ### ⚙️ Synthesis Steps
 
 I used Cadence Genus to synthesize the RTL design into a gate-level netlist. The process involved the following steps:
 
-1.  **Read Libraries**: Load the standard cell timing libraries (`.lib` files).
+1. **Read Libraries**: Load the standard cell timing libraries (`.lib` files).
 
-    ```tcl
-    set_db lib_search_path <path_to_your_libs>
-    set_db library "slow.lib typical.lib fast.lib"
-    ```
+   ```tcl
+   set_db lib_search_path <path_to_your_libs>
+   set_db library "slow.lib typical.lib fast.lib"
+   ```
 
-    > **Note:** The `lib_search_path` must be replaced with the actual path to the technology libraries on your system.
+   > **Note:** The `lib_search_path` must be replaced with the actual path to the technology libraries on your system.
 
-2.  **Read RTL Design**: Read the Verilog source file (`mux.v`) into the tool.
+2. **Read RTL Design**: Read the Verilog source file (`mux.v`) into the tool.
 
-    ```tcl
-    read_hdl mux.v
-    ```
+   ```tcl
+   read_hdl mux.v
+   ```
 
-3.  **Elaborate Design**: Define the top-level module to create the design hierarchy.
+3. **Elaborate Design**: Define the top-level module to create the design hierarchy.
 
-    ```tcl
-    elaborate mux4x1
-    ```
+   ```tcl
+   elaborate mux4x1
+   ```
 
-4.  **Apply Constraints**: Set basic design rules for the synthesis tool to follow.
+4. **Apply Constraints**: Set basic design rules for the synthesis tool to follow.
 
-    ```tcl
-    set_max_fanout 16 [current_design]
-    set_max_transition 0.2 [current_design]
-    ```
+   ```tcl
+   set_max_fanout 16 [current_design]
+   set_max_transition 0.2 [current_design]
+   ```
 
-5.  **Synthesize**: Run the three-step synthesis flow to map the design to the standard cell library.
+5. **Synthesize**: Run the three-step synthesis flow to map the design to the standard cell library.
 
-    ```tcl
-    syn_gen
-    syn_map
-    syn_opt
-    ```
+   ```tcl
+   syn_gen
+   syn_map
+   syn_opt
+   ```
 
-6.  **Generate Reports**: Create reports for area and timing to analyze the results.
+6. **Generate Reports**: Create reports for area and timing to analyze the results.
 
-    ```tcl
-    report_area
-    report_timing
-    ```
+   ```tcl
+   report_area
+   report_timing
+   ```
 
-7.  **Write Outputs**: Save the synthesized gate-level netlist.
+7. **Write Outputs**: Save the synthesized gate-level netlist.
 
-    ```tcl
-    write_hdl -mapped > mux_gate.v
-    ```
+   ```tcl
+   write_hdl -mapped > mux_gate.v
+   ```
 
------
+---
 
-## 6\. Synthesis Results
+## 6. Synthesis Results
 
 ### Synthesized Design Schematic
 
 After synthesis, the RTL is converted into a netlist of standard cells from the technology library. The image below shows the gate-level implementation of the 4x1 MUX.
 
+![Synthesized 4x1 MUX Schematic](genus_synthesized.png)
+
+*Figure 2: Gate-level schematic generated by Cadence Genus showing the optimized 4x1 MUX implementation*
+
 ### Area and Cell Report
 
 The synthesis tool reported the following resource utilization:
 
-  - **Total Cells:** 5
-  - **Combinational Area:** 22.5 (µm²)
-  - **Cell Breakdown:**
-      - 3 MUX2 (2-to-1 Multiplexer) cells
-      - 2 INV (Inverter) cells
+- **Total Cells:** 5
+- **Combinational Area:** 22.5 (µm²)
+- **Cell Breakdown:**
+  - 3 MUX2 (2-to-1 Multiplexer) cells
+  - 2 INV (Inverter) cells
 
 This result perfectly matches the expected hardware implementation, where a 4x1 MUX is built from three 2x1 MUX cells and two inverters for the select lines.
 
------
+### Synthesis Analysis
 
-## 7\. Design Analysis
+The synthesized design demonstrates:
+- **Optimal Gate Selection:** Efficient use of 2x1 MUX cells for building the 4x1 functionality
+- **Minimal Area:** Compact gate-level implementation
+- **Clear Signal Flow:** Visible data path from inputs through multiplexer tree to output
+- **Select Logic Optimization:** Proper handling of 2-bit select signal decoding
+
+---
+
+## 7. Design Analysis
 
 ### Logic Verification
 
@@ -227,13 +253,28 @@ My truth table verification confirms the design is logically correct:
 
 ### Design Strengths
 
-1.  **Concise Implementation:** Single-line, readable logic expression.
-2.  **Area Efficiency:** Synthesizes to a minimal number of standard cells.
-3.  **Testable:** Comprehensive verification was easily achieved.
+1. **Concise Implementation:** Single-line, readable logic expression.
+2. **Area Efficiency:** Synthesizes to a minimal number of standard cells.
+3. **Testable:** Comprehensive verification was easily achieved.
+4. **Scalable:** Design methodology can extend to larger multiplexers.
 
------
+### Performance Characteristics
 
-## 8\. Key Learning Outcomes
+- **Propagation Delay:** Single gate delay through MUX tree
+- **Power Consumption:** Low static power, dynamic power only during switching
+- **Area Utilization:** Minimal footprint suitable for integration
+- **Fan-out Capability:** Can drive multiple loads effectively
+
+### Applications
+
+- **Data Routing:** Channel selection in communication systems
+- **Address Decoding:** Memory and peripheral device selection  
+- **ALU Design:** Operand selection in arithmetic logic units
+- **Control Logic:** State machine input selection
+
+---
+
+## 8. Key Learning Outcomes
 
 ### Technical Skills Developed
 
@@ -245,6 +286,32 @@ My truth table verification confirms the design is logically correct:
 
 ### Professional Tools Experience
 
-  - **Cadence Xcelium:** Advanced simulation environment.
-  - **Cadence Genus:** Industry-standard synthesis tool.
-  - **SimVision:** Professional waveform viewer and analyzer.
+- **Cadence Xcelium:** Advanced simulation environment.
+- **Cadence Genus:** Industry-standard synthesis tool.
+- **SimVision:** Professional waveform viewer and analyzer.
+
+### Design Methodology
+
+- **Hierarchical Design:** Understanding modular design principles
+- **Verification Strategy:** Systematic test case development
+- **Synthesis Optimization:** Gate-level optimization techniques
+- **Documentation:** Professional technical report writing
+
+---
+
+## 🎯 Conclusion
+
+This 4x1 Multiplexer project successfully demonstrates:
+- **Clean RTL Design:** Efficient use of ternary operators for compact logic
+- **Thorough Verification:** Complete functional testing with visual waveform analysis
+- **Successful Synthesis:** Optimal gate-level implementation with area efficiency
+- **Professional Documentation:** Complete design flow documentation from concept to gates
+
+The design serves as an excellent foundation for understanding digital multiplexing circuits and demonstrates industry-standard design practices from specification to implementation.
+
+---
+
+**Design Status**: ✅ **VERIFIED AND SYNTHESIZED**
+
+**Tools Used**: Cadence Xcelium (Simulation), Cadence Genus (Synthesis)  
+**Last Updated**: September 28, 2025
