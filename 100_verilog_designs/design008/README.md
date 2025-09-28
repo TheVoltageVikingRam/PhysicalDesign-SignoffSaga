@@ -1,6 +1,3 @@
-Of course. Here is the updated `README.md` for your 4x1 Multiplexer project, now including the synthesis flow and results.
-
------
 
 # 4x1 Multiplexer Design, Simulation, and Synthesis Report
 
