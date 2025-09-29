@@ -1,0 +1,12 @@
+#e1(29Sep2025:04:45:53): source ./xcelium.d/env.d/env.history.29Sep2025_04_45_53
+s1(29Sep2025:04:45:53):  xrun -timescale 1ns/1ps +access+rwc -gui 4-bit_comparator.v 4-bit_mag_tb.v 
+#e2(29Sep2025:04:46:28): source ./xcelium.d/env.d/env.history.29Sep2025_04_46_28
+s2(29Sep2025:04:46:28):  xrun -timescale 1ns/1ps +access+rwc -gui 4-bit_comparator.v 4-bit_mag_tb.v 
+#e3(29Sep2025:04:47:51): source ./xcelium.d/env.d/env.history.29Sep2025_04_47_51
+s3(29Sep2025:04:47:51):  xrun -timescale 1ns/1ps +access+rwc -gui 4-bit_comparator.v 4-bit_mag_tb.v 
+#e4(29Sep2025:04:48:49): source ./xcelium.d/env.d/env.history.29Sep2025_04_48_49
+s4(29Sep2025:04:48:49):  xrun -timescale 1ns/1ps +access+rwc -gui 4-bit_comparator.v 4-bit_mag_tb.v 
+#e5(29Sep2025:04:49:10): source ./xcelium.d/env.d/env.history.29Sep2025_04_49_10
+s5(29Sep2025:04:49:10):  xrun -timescale 1ns/1ps +access+rwc -gui 4-bit_comparator.v 4-bit_mag_tb.v 
+#e6(29Sep2025:04:52:03): source ./xcelium.d/env.d/env.history.29Sep2025_04_52_03
+s6(29Sep2025:04:52:03):  xrun -timescale 1ns/1ps +access+rwc -gui 4-bit_comparator.v 4-bit_mag_tb.v 

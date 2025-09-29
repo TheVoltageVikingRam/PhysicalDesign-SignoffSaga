@@ -1,0 +1,53 @@
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s001: Started on Sep 29, 2025 at 04:52:03 IST
+xrun
+	-timescale 1ns/1ps
+	+access+rwc
+	-gui
+	4-bit_comparator.v
+	4-bit_mag_tb.v
+Recompiling... reason: file './4-bit_mag_tb.v' is newer than expected.
+	expected: Mon Sep 29 04:45:04 2025
+	actual:   Mon Sep 29 04:52:00 2025
+file: 4-bit_mag_tb.v
+	module worklib.mag_tb:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		mag_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.mag_tb:v <0x0eaa7f1e>
+			streams:   3, words:  4108
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:               5       5
+		Scalar wires:            3       -
+		Vectored wires:          2       -
+		Always blocks:           1       1
+		Initial blocks:          1       1
+		Pseudo assignments:      2       -
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.mag_tb:v
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /home/server2/cadence/installs/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm mag_tb.uut.a mag_tb.uut.b mag_tb.uut.equ mag_tb.uut.g_t mag_tb.uut.l_t
+Created probe 1
+xcelium> run 100
+Simulation complete via $finish(1) at time 80 NS + 0
+./4-bit_mag_tb.v:17 $finish();
+xcelium> ^C
+xcelium> exit
+...Regained control from SimVision
+-------------------------------------
+TOOL:	xrun(64)	25.03-s001: Exiting on Sep 29, 2025 at 04:53:59 IST  (total: 00:01:56)

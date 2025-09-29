@@ -1,0 +1,467 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[04:54:07.494497] Configured Lic search path (23.02-s006): /home/server2/cadence/installs/license.dat
+
+Version: 23.13-s073_1, built Thu Nov 07 20:31:49 PST 2024
+Options: 
+Date:    Mon Sep 29 04:54:07 2025
+Host:    hostname1 (x86_64 w/Linux 4.18.0-553.74.1.el8_10.x86_64) (10cores*40cpus*2physical cpus*Intel(R) Xeon(R) CPU E5-2658 v2 @ 2.40GHz 25600KB) (65345448KB)
+PID:     75246
+OS:      Rocky Linux 8.10 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+[04:54:07.415168] Periodic Lic check successful
+[04:54:07.939493] Feature usage summary:
+[04:54:07.939500] Genus_Synthesis
+
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (1 second elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (19 seconds elapsed).
+
+WARNING: This version of the tool is 324 days old.
+@genus:root: 1> ls
+4-bit_comparator.v
+4-bit_mag_tb.v
+genus.cmd
+genus.log
+waves.shm
+xcelium.d
+xrun.history
+xrun.key
+xrun.log
+@genus:root: 2> read_hdl 4-bit_comparator.v
+@genus:root: 3> elaborate mag
+Error   : Failed to execute command. [LBR-163] [elaborate]
+        : No target technology library was loaded.
+        : Specify libraries using read_libs or read_mmmc.
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+1
+@genus:root: 4> set_db lib_search_path /home/server2/cadence/installs/DDI231/INNOVUS231/share/FoundationFlows/EXAMPLES/INNOVUS/DESIGN/GPDK/LIBS/GPDK045/timing
+  Setting attribute of root '/': 'lib_search_path' = /home/server2/cadence/installs/DDI231/INNOVUS231/share/FoundationFlows/EXAMPLES/INNOVUS/DESIGN/GPDK/LIBS/GPDK045/timing
+1 /home/server2/cadence/installs/DDI231/INNOVUS231/share/FoundationFlows/EXAMPLES/INNOVUS/DESIGN/GPDK/LIBS/GPDK045/timing
+@genus:root: 5> set_db library "slow.lib typical.lib fast.lib"
+
+  Message Summary for Library all 3 libraries:
+  ********************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 3
+  Missing library level attribute. [LBR-516]: 3
+  ********************************************
+ 
+Warning : Libraries have inconsistent nominal operating conditions. In the Liberty library, there are attributes called nom_voltage, nom_process and nom_temperature. Genus reports the message, if the respective values of the 2 given .libs differ. [LBR-38]
+        : The libraries are 'gpdk045bc' and 'typical'.
+        : This is a common source of delay calculation confusion and should be avoided.
+Warning : Libraries have inconsistent nominal operating conditions. In the Liberty library, there are attributes called nom_voltage, nom_process and nom_temperature. Genus reports the message, if the respective values of the 2 given .libs differ. [LBR-38]
+        : The libraries are 'gpdk045bc' and 'gpdk045wc'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.080000, 125.000000) in library 'slow.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.200000, 25.000000) in library 'typical.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.320000, 0.000000) in library 'fast.lib'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/ADDFHX2'.
+        : Specify a valid area value for the libcell.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/ADDFHX4'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/ADDFHXL'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/ADDFXL'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/ADDHX2'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/ADDHXL'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/AND2X4'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/AND2X6'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/AND2XL'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/AND3X1'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/AND3X8'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/AND3XL'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/AND4X1'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/AND4X4'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/AND4X8'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/AND4XL'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/AO21X1'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/AO21X2'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/AO21XL'.
+Warning : Libcell has no area attribute.  Defaulting to 0 area. [LBR-43]
+        : Assigning 0 area to library cell 'gpdk045bc/AO22X1'.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'LBR-43'.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/ADDFHX2 and typical/ADDFHX2).  Deleting (typical/ADDFHX2).
+        : Library cell names must be unique.  Any duplicates will be deleted.  Only the first (as determined by the order of libraries) will be retained.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/ADDFHX4 and typical/ADDFHX4).  Deleting (typical/ADDFHX4).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/ADDFHXL and typical/ADDFHXL).  Deleting (typical/ADDFHXL).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/ADDFXL and typical/ADDFXL).  Deleting (typical/ADDFXL).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/ADDHX2 and typical/ADDHX2).  Deleting (typical/ADDHX2).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/ADDHXL and typical/ADDHXL).  Deleting (typical/ADDHXL).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND2X4 and typical/AND2X4).  Deleting (typical/AND2X4).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND2X6 and typical/AND2X6).  Deleting (typical/AND2X6).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND2XL and typical/AND2XL).  Deleting (typical/AND2XL).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND3X1 and typical/AND3X1).  Deleting (typical/AND3X1).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND3X8 and typical/AND3X8).  Deleting (typical/AND3X8).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND3XL and typical/AND3XL).  Deleting (typical/AND3XL).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND4X1 and typical/AND4X1).  Deleting (typical/AND4X1).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND4X4 and typical/AND4X4).  Deleting (typical/AND4X4).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND4X8 and typical/AND4X8).  Deleting (typical/AND4X8).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND4XL and typical/AND4XL).  Deleting (typical/AND4XL).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AO21X1 and typical/AO21X1).  Deleting (typical/AO21X1).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AO21X2 and typical/AO21X2).  Deleting (typical/AO21X2).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AO21XL and typical/AO21XL).  Deleting (typical/AO21XL).
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AO22X1 and typical/AO22X1).  Deleting (typical/AO22X1).
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'LBR-22'.
+  Setting attribute of root '/': 'library' = slow.lib typical.lib fast.lib
+1 {slow.lib typical.lib fast.lib}
+@genus:root: 6> elaborate mag
+  Libraries have 324 usable logic and 126 usable sequential lib-cells.
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'mag' from file '4-bit_comparator.v'.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'mag'.
+Checking for source RTL...
+Check completed for source RTL.
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_elab
+-------------------------------------------------------
+| Trick             | Accepts | Rejects | Runtime (s) | 
+-------------------------------------------------------
+| ume_constant_bmux |       0 |       0 |        0.00 | 
+| ume_merge         |       0 |       0 |        0.00 | 
+| ume_ssm           |       0 |       0 |        0.00 | 
+| ume_cse           |       0 |       0 |        0.00 | 
+| ume_shrink        |       0 |       0 |        0.00 | 
+| ume_sweep         |       0 |       0 |        0.00 | 
+-------------------------------------------------------
+Starting optimize datapath shifters [v1.0] (stage: post_elab, startdef: mag, recur: true)
+Completed optimize datapath shifters (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip mux common data inputs [v1.0] (stage: post_elab, startdef: mag, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip the non-user hierarchies [v2.0] (stage: post_elab, startdef: mag, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting basic netlist cleanup [v1.0] (stage: post_elab, startdef: mag, recur: true)
+Completed basic netlist cleanup (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: post_elab
+--------------------------------------------------------------------
+| Transform                      | Accepts | Rejects | Runtime (s) | 
+--------------------------------------------------------------------
+| hlo_optimize_datapath_shifters |       0 |       0 |        0.00 | 
+| hlo_clip_mux_input             |       0 |       0 |        0.00 | 
+| hlo_clip                       |       0 |       0 |        0.00 | 
+| hlo_cleanup                    |       0 |       0 |        0.00 | 
+--------------------------------------------------------------------
+      flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+design:mag
+@genus:root: 7> nano constraints.sdc
+@genus:root: 8> read_sdc constraints.sdc
+Warning : Could not find requested search value. [SDC-208] [get_ports]
+        : The 'get_ports' command on line '1' of the SDC file 'constraints.sdc'  cannot find any ports named 'clk'
+        : Use get_* commands to find the objects along with a wild card entry in the name of the object to check if the object is existing with different naming style.
+Error   : A required object parameter could not be found. [TUI-61] [create_clock]
+        : An object of type 'port|pin|hpin' named '' could not be found.
+        : Check to make sure that the object exists and is of the correct type.  The 'what_is' command can be used to determine the type of an object.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '1' of the SDC file 'constraints.sdc': create_clock -name clk -period 10.0 [get_ports clk] -waveform {0.0 5.0}.
+        : The 'read_sdc' command encountered a problem while trying to evaluate an SDC command. This SDC command will be added to the Tcl variable $::dc::sdc_failed_commands.
+Error   : Invalid SDC command option combination. [SDC-204] [set_io_delay]
+        : The set_io_delay command does not accept any invalid clock
+        : This option is not valid for the indicated SDC command. Check the SDC command and contact Cadence customer support if you believe this option combination should be supported.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '2' of the SDC file 'constraints.sdc': set_input_delay -clock clk -max 3.0 [get_ports {a[*] b[*]} ].
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '3' of the SDC file 'constraints.sdc': set_input_delay -clock clk -min 0.0 [get_ports {a[*] b[*]} ].
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '6' of the SDC file 'constraints.sdc': set_output_delay -clock clk -max 3.0 [get_ports {g_t l_t equ} ].
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '7' of the SDC file 'constraints.sdc': set_output_delay -clock clk -min 0.0 [get_ports {g_t l_t equ} ].
+Warning : Could not find requested search value. [SDC-208] [get_clocks]
+        : The 'get_clocks' command on line '10' of the SDC file 'constraints.sdc'  cannot find any clocks named 'clk'
+Error   : Option missing for SDC command. [SDC-203] [set_clock_uncertainty]
+        : The set_clock_uncertainty command requires '-from', '-to', '-rise_from', '-fall_from', '-rise_to', '-fall_to', or list of objects option.
+        : This SDC command requires the indicated options.  Check the SDC command and contact Cadence customer support if you believe this option combination should be supported.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '10' of the SDC file 'constraints.sdc': set_clock_uncertainty 0.2 [get_clocks clk].
+Error   : Unknown TCL command in the SDC file. [SDC-234] [read_sdc]
+        : Invalid command 'set_max_transitionn'
+        : The 'read_sdc' command encountered a problem while trying to evaluate a command in the SDC file.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The TCL interpreter encountered the following error while processing line '12' of the SDC file 'constraints.sdc': invalid command name 'set_max_transitionn'.
+Statistics for commands executed by read_sdc:
+ "create_clock"             - successful      0 , failed      1 (runtime  0.00)
+ "get_clocks"               - successful      0 , failed      1 (runtime  0.00)
+ "get_ports"                - successful      6 , failed      1 (runtime  0.01)
+ "set_clock_uncertainty"    - successful      0 , failed      1 (runtime  0.00)
+ "set_input_delay"          - successful      0 , failed      2 (runtime  0.00)
+ "set_max_delay"            - successful      1 , failed      0 (runtime  0.01)
+ "set_max_fanout"           - successful      1 , failed      0 (runtime  0.01)
+ "set_output_delay"         - successful      0 , failed      2 (runtime  0.00)
+Warning : Total failed commands during read_sdc are 8
+Warning : One or more commands failed when these constraints were applied. [SDC-209]
+        : The 'read_sdc' command encountered a problem while processing commands.
+        : You can examine the failed commands or save them to a file by querying the Tcl variable $::dc::sdc_failed_commands.
+read_sdc completed in 00:00:01 (hh:mm:ss)
+@genus:root: 9> ls
+4-bit_comparator.v
+4-bit_mag_tb.v
+constraints.sdc
+fv
+genus.cmd
+genus.log
+waves.shm
+xcelium.d
+xrun.history
+xrun.key
+xrun.log
+@genus:root: 10> cat constraints.sdc
+1
+@genus:root: 11> nano constraints.sc
+@genus:root: 12> nano constraints.sdc
+
+[05:09:12.003224] periodic Lic check successful
+[05:09:12.016520] Feature usage summary:
+[05:09:12.101071]   Genus_Synthesis  
+@genus:root: 13> ls
+4-bit_comparator.v
+4-bit_mag_tb.v
+constraints.sdc
+fv
+genus.cmd
+genus.log
+waves.shm
+xcelium.d
+xrun.history
+xrun.key
+xrun.log
+@genus:root: 14> nano 4-bit_comparator.v
+@genus:root: 15> nano constraints.sdc
+@genus:root: 16> read_sdc constraints.sdc
+Warning : Maximum message print count reached. [MESG-11] [get_ports]
+        : Maximum print count of '1' reached for message 'SDC-208'.
+Error   : A required object parameter could not be found. [TUI-61] [create_clock]
+        : An object of type 'port|pin|hpin' named '' could not be found.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '1' of the SDC file 'constraints.sdc': create_clock -name clk -period 10.0 [get_ports clk] -waveform {0.0 5.0}.
+Error   : Invalid SDC command option combination. [SDC-204] [set_io_delay]
+        : The set_io_delay command does not accept any invalid clock
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '2' of the SDC file 'constraints.sdc': set_input_delay -clock clk -max 3.0 [get_ports {a[*] b[*]} ].
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '3' of the SDC file 'constraints.sdc': set_input_delay -clock clk -min 0.0 [get_ports {a[*] b[*]} ].
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '6' of the SDC file 'constraints.sdc': set_output_delay -clock clk -max 3.0 [get_ports {g_t l_t equ} ].
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '7' of the SDC file 'constraints.sdc': set_output_delay -clock clk -min 0.0 [get_ports {g_t l_t equ} ].
+Error   : Unknown TCL command in the SDC file. [SDC-234] [read_sdc]
+        : Invalid command '//set_max_delay'
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The TCL interpreter encountered the following error while processing line '9' of the SDC file 'constraints.sdc': invalid command name '//set_max_delay'.
+Warning : Could not find requested search value. [SDC-208] [get_clocks]
+        : The 'get_clocks' command on line '10' of the SDC file 'constraints.sdc'  cannot find any clocks named 'clk'
+Error   : Option missing for SDC command. [SDC-203] [set_clock_uncertainty]
+        : The set_clock_uncertainty command requires '-from', '-to', '-rise_from', '-fall_from', '-rise_to', '-fall_to', or list of objects option.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '10' of the SDC file 'constraints.sdc': set_clock_uncertainty 0.2 [get_clocks clk].
+Statistics for commands executed by read_sdc:
+ "create_clock"             - successful      0 , failed      1 (runtime  0.00)
+ "get_clocks"               - successful      0 , failed      1 (runtime  0.00)
+ "get_ports"                - successful      6 , failed      1 (runtime  0.00)
+ "set_clock_uncertainty"    - successful      0 , failed      1 (runtime  0.00)
+ "set_input_delay"          - successful      0 , failed      2 (runtime  0.00)
+ "set_max_fanout"           - successful      1 , failed      0 (runtime  0.00)
+ "set_max_transition"       - successful      1 , failed      0 (runtime  0.02)
+ "set_output_delay"         - successful      0 , failed      2 (runtime  0.00)
+Warning : Total failed commands during read_sdc are 8
+Warning : One or more commands failed when these constraints were applied. [SDC-209]
+        : The 'read_sdc' command encountered a problem while processing commands.
+read_sdc completed in 00:00:00 (hh:mm:ss)
+@genus:root: 17> nano constraints.sdc
+@genus:root: 18> nano 4-bit_comparator.v
+@genus:root: 19> read_sdc constraints.sdc
+Error   : A required object parameter could not be found. [TUI-61] [create_clock]
+        : An object of type 'port|pin|hpin' named '' could not be found.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '1' of the SDC file 'constraints.sdc': create_clock -name clk -period 10.0 [get_ports clk] -waveform {0.0 5.0}.
+Error   : Invalid SDC command option combination. [SDC-204] [set_io_delay]
+        : The set_io_delay command does not accept any invalid clock
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '2' of the SDC file 'constraints.sdc': set_input_delay -clock clk -max 3.0 [get_ports {a[*] b[*]} ].
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '3' of the SDC file 'constraints.sdc': set_input_delay -clock clk -min 0.0 [get_ports {a[*] b[*]} ].
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '6' of the SDC file 'constraints.sdc': set_output_delay -clock clk -max 3.0 [get_ports {g_t l_t equ} ].
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '7' of the SDC file 'constraints.sdc': set_output_delay -clock clk -min 0.0 [get_ports {g_t l_t equ} ].
+Warning : Could not find requested search value. [SDC-208] [get_clocks]
+        : The 'get_clocks' command on line '10' of the SDC file 'constraints.sdc'  cannot find any clocks named 'clk'
+Error   : A required object parameter could not be found. [TUI-61] [set_clock_uncertainty_fast]
+        : An object of type 'clock' named '' could not be found.
+Error   : Option missing for SDC command. [SDC-203] [set_clock_uncertainty]
+        : The set_clock_uncertainty command requires '-from', '-to', '-rise_from', '-fall_from', '-rise_to', '-fall_to', or list of objects option.
+Warning : Suppressed remaining 'SDC-208' warnings. [SDC-236]
+        : The line '10' of the SDC file 'constraints.sdc' had total 2 failures.
+        : Use the attribute 'collapse_sdc_msg' to control printing of warning 'SDC-208'.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '10' of the SDC file 'constraints.sdc': set_clock_uncertainty -setup 0.2 -from [get_clocks clk] -to [get_clocks clk].
+Statistics for commands executed by read_sdc:
+ "create_clock"             - successful      0 , failed      1 (runtime  0.00)
+ "get_clocks"               - successful      0 , failed      2 (runtime  0.00)
+ "get_ports"                - successful      4 , failed      1 (runtime  0.00)
+ "set_clock_uncertainty"    - successful      0 , failed      1 (runtime  0.00)
+ "set_input_delay"          - successful      0 , failed      2 (runtime  0.00)
+ "set_max_fanout"           - successful      1 , failed      0 (runtime  0.00)
+ "set_max_transition"       - successful      1 , failed      0 (runtime  0.00)
+ "set_output_delay"         - successful      0 , failed      2 (runtime  0.00)
+Warning : Total failed commands during read_sdc are 9
+Warning : One or more commands failed when these constraints were applied. [SDC-209]
+        : The 'read_sdc' command encountered a problem while processing commands.
+read_sdc completed in 00:00:00 (hh:mm:ss)
+@genus:root: 20> nano 4-bit_comparator.v
+@genus:root: 21> read_hdl 4-bit_comparator.v
+@genus:root: 22> elaborate mag
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'mag' from file '4-bit_comparator.v'.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'mag'.
+Checking for source RTL...
+Check completed for source RTL.
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_elab
+-------------------------------------------------------
+| Trick             | Accepts | Rejects | Runtime (s) | 
+-------------------------------------------------------
+| ume_constant_bmux |       0 |       0 |        0.00 | 
+| ume_merge         |       0 |       0 |        0.00 | 
+| ume_ssm           |       0 |       0 |        0.00 | 
+| ume_cse           |       0 |       0 |        0.00 | 
+| ume_shrink        |       0 |       0 |        0.00 | 
+| ume_sweep         |       0 |       0 |        0.00 | 
+-------------------------------------------------------
+Starting optimize datapath shifters [v1.0] (stage: post_elab, startdef: mag_1, recur: true)
+Completed optimize datapath shifters (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip mux common data inputs [v1.0] (stage: post_elab, startdef: mag_1, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip the non-user hierarchies [v2.0] (stage: post_elab, startdef: mag_1, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting basic netlist cleanup [v1.0] (stage: post_elab, startdef: mag_1, recur: true)
+Completed basic netlist cleanup (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: post_elab
+--------------------------------------------------------------------
+| Transform                      | Accepts | Rejects | Runtime (s) | 
+--------------------------------------------------------------------
+| hlo_optimize_datapath_shifters |       0 |       0 |        0.00 | 
+| hlo_clip_mux_input             |       0 |       0 |        0.00 | 
+| hlo_clip                       |       0 |       0 |        0.00 | 
+| hlo_cleanup                    |       0 |       0 |        0.00 | 
+--------------------------------------------------------------------
+      flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+design:mag_1
+@genus:root: 23> read_sdc constraints.sdc
+Error   : Multiple designs are available. Specify the design you want to use. [TUI-17] [read_sdc]
+        : There is no unique design here.
+        : Specify a design by using the cd command to change to that design's directory or specify the design as an argument for the command.
+Error   : Multiple designs are available. Specify the design you want to use. [TUI-17] [::dc::get_ports]
+        : There is no unique design here.
+Error   : A required object parameter could not be found. [TUI-61] [create_clock]
+        : An object of type 'port|pin|hpin' named 'find_unique_design' could not be found.
+Error   : Multiple designs are available. Specify the design you want to use. [TUI-17] [::dc::create_clock]
+        : There is no unique design here.
+Warning : Maximum message print count reached. [MESG-11] [read_sdc]
+        : Maximum print count of '20' reached for message 'SDC-202'.
+Error   : Multiple designs are available. Specify the design you want to use. [TUI-17] [::dc::get_ports]
+        : There is no unique design here.
+Error   : A required object parameter could not be found. [TUI-61] [set_input_output_delay_fast]
+        : An object of type 'port|hpin_bus|port_bus|pin|hpin' named 'find_unique_design' could not be found.
+Error   : Multiple designs are available. Specify the design you want to use. [TUI-17] [::dc::get_ports]
+        : There is no unique design here.
+Error   : A required object parameter could not be found. [TUI-61] [set_input_output_delay_fast]
+        : An object of type 'port|hpin_bus|port_bus|pin|hpin' named 'find_unique_design' could not be found.
+Error   : Multiple designs are available. Specify the design you want to use. [TUI-17] [::dc::get_ports]
+        : There is no unique design here.
+Error   : A required object parameter could not be found. [TUI-61] [set_input_output_delay_fast]
+        : An object of type 'port|hpin_bus|port_bus|pin|hpin' named 'find_unique_design' could not be found.
+Error   : Multiple designs are available. Specify the design you want to use. [TUI-17] [::dc::get_ports]
+        : There is no unique design here.
+Error   : A required object parameter could not be found. [TUI-61] [set_input_output_delay_fast]
+        : An object of type 'port|hpin_bus|port_bus|pin|hpin' named 'find_unique_design' could not be found.
+Error   : Multiple designs are available. Specify the design you want to use. [TUI-17] [::dc::get_clocks]
+        : There is no unique design here.
+Failed on finding the unique design.
+Error   : Multiple designs are available. Specify the design you want to use. [TUI-17] [::dc::get_clocks]
+        : There is no unique design here.
+Failed on finding the unique design.
+Error   : A required object parameter could not be found. [TUI-61] [set_clock_uncertainty_fast]
+        : An object of type 'clock' named '1' could not be found.
+Error   : Option missing for SDC command. [SDC-203] [set_clock_uncertainty]
+        : The set_clock_uncertainty command requires '-from', '-to', '-rise_from', '-fall_from', '-rise_to', '-fall_to', or list of objects option.
+Error   : Multiple designs are available. Specify the design you want to use. [TUI-17] [::dc::set_max_transition]
+        : There is no unique design here.
+
+Segmentation Fault accessing address 18.
+
+Fatal internal error, code 11 (Segmentation fault)
+
+Dumping stack trace (tid:7efed7492680/main thread).
+
+Operating System: linux
+Product Version: 23.13-s073_1
+Build Date: Nov  8 2024 10:01:49
+Executable: /home/server2/cadence/installs/DDI231/GENUS231/tools.lnx86/synth/bin/64bit/genus
+Startup Options: no options specified
+Current Directory: /home/user3/Music/ram/100_designs_on_verilog/100_designs_on_verilog/design014
+Stack trace:
+
+Abnormal exit.
