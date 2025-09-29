@@ -10,7 +10,7 @@ wire carry , zero;
 
 //map all the I/O ports with DUT
 
-ALU uut ( .a(a), .b(b), .s(S), .en(en), .clk(clk), .y(y), .carry(carry), .zero(zero) );
+ALU uut ( .a(a), .b(b), .s(s), .en(en), .clk(clk), .y(y), .carry(carry), .zero(zero) );
 
 
 //initialize input pins with 0
