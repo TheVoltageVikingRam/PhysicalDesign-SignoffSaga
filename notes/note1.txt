@@ -1,1 +1,3 @@
+What is a design specification?
 
+A design specification serves as the foundation for any project. outlining the essential requirements that must be met. It can take various forms, including textual descriptions, graphical representations or even software models. This document is crucial for engineers as it sets clear the criteria that guide their, ensuring that the final product aligns with the initial vision. `
