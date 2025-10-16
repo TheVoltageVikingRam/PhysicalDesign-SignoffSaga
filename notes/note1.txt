@@ -1,3 +1,74 @@
 What is a design specification?
 
 A design specification serves as the foundation for any project. outlining the essential requirements that must be met. It can take various forms, including textual descriptions, graphical representations or even software models. This document is crucial for engineers as it sets clear the criteria that guide their, ensuring that the final product aligns with the initial vision. `
+
+In the early days of digital design engineers created binary input patterns to test circuits.
+These patterns were specific to the tools and platforms used. making hard to share or adopt. THis approach was time consuming and error prone. Once the binary inputs are ready, they are applied to the shematic netlist. This netlist represents the actual logic gates and connections to the circuit. Simulation tools then show how the inputs affect thhe outputs, mimicking real hardware behaviour. Only 0 and 1
+characters were used; we did not use the Z and X characters because those values do not exist in real hardware.
+THe final step is to look at the waveform outputs and verify that the circuit performs correctly. This manual process is tedious and requires a deep understanding of timing and logical behaviour. Any errors must be traced back through the shematic, which can be very time consuming.
+
+This legacy approach highlights the challenges of shematic based design; low reusability, high manual effort, and limited scalability. From here we can compare the modern HDL-based design which offers higher abstraction, automation and portability.
+
+
+What is a hardware description language? (HDL)
+An HDL is a programming language with special constructs for modelling hardware concurrency and timing.
+
+An HDL supports a design at multiple levels of abstraction.
+behavioural
+-->Sequential behaviour
+-->Parallel behaviour
+
+Structural modelling
+
+--> hardware component hierarchy
+--> software component hierarchy
+
+Time Modelling
+
+An HDL has to model propagation delays, clock periods, and timing checks.
+An HDL typically supports Simulation of estimated design timing.
+
+
+Hardware Description Language (HDL) is similar to a procedural language but also contains constructs to describe digital electronic systems.
+An HDL conatins features and constructs to support a description of the following:
+
+Behaviour- Both serial and Parallel. In serial behaviour , you pass the output of one functional block to the input of another functional block which is simiular to the behvioiur of a conventiobnal software language. However , in parallel behaviour
+you can pass a block output to the inputs of a number of blocks acting in parallel, where many separate events happen at the same moment in time.
+
+Structure-  Both physical such as hierarchial block diagrams abd component netlists, abd software such as subroutines. This allows you to describe large complex systems and manage their complexity.
+
+Time- Programing languages have no concept of time. An HDL has to model propagation delays, clock periods and timing checks.
+An HDL typically suports multiple abstraction levels. YOu can describe hardware behaviourally, without andwith sufficient detail for logic synthesis and as a strctured netlist of predefined components that can themselves be as simple as a transistor and as complex as another behavioural design.
+
+Evolution of Hardware Description languages
+Key metrics before and after the adoption of Hardware Description languages
+Design Time 
+- Reduced significantly with HDL due to automation and abstraction.
+
+Error Rate 
+Lowered thanks to simulation and verification tools 
+
+reusability
+significantly improved with modular HDL code
+
+Simulation Capability
+
+Enhanced with precise timing and concurrency modelling
+
+scalability
+
+Easier to scale complex designs using hierarchial HDL structures.
+
+Before HDL describing hardware was slow , error prone, hard to scale. But with HDLs like Verilog , VHDL, things improved significantly.
+Desig TIme: HDLs reduce manual design effort byalowing engineers to describe hardware behaviour using code. This speeds up the design process significantly.
+
+Error rate : With HDLs, engineers can simulate and verify designs before fabrication , catching bugs early and reducing costly errors.
+
+reusability: HDL code is modular and can be reusedacross projects unlike traditional schematic designs.
+
+Simulation : HDLs suport detailed simulatio of timing and concurrency, helping engineers understand how the design behaves under different conditions.
+
+scalability: It's easier to build big, complex systems. HDLs support hierarchial deisgns making it easier to mabage and scale complex system.
+
+As you can see in the graph, all these areas improved after HDLs were introduced. That's why HDLs are so important in modern electronic design.
+An HDL
