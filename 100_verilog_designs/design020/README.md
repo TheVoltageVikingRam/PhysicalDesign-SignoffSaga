@@ -135,6 +135,3 @@ xrun -access +rwc sequential_multiplier.sv tb_mult_controller.sv
 Author: Part of the *100 Verilog Designs* series
 Last updated: November 2025
 
----
-
-If you'd like, I can also create a ready-to-commit README file content or provide a small `Makefile`/`scripts/run_xrun.sh` helper to run simulations with common options.
