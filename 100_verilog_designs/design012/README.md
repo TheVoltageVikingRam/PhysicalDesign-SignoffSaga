@@ -22,7 +22,7 @@ xrun -timescale 1ns/1ps +access+rwc -gui sr_latch.v tb_sr_latch.v
 
 ### Waveform
 
-![SR Latch Simulation](tb_sr_latch.png)
+![SR Latch Simulation](SR_Latch_xcelium_simulation.png)
 
 ## Important Notes
 
