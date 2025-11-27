@@ -1,4 +1,4 @@
-# RAM Controller Design (Design025)
+# RAM Controller Design
 
 ## 📋 Project Overview
 
