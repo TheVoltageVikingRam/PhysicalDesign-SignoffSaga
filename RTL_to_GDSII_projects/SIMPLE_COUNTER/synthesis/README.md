@@ -85,7 +85,7 @@ SIMPLE_COUNTER/
 
 ## 📸 Synthesis Output Snapshot
 
-![Synthesis Screenshot](./screenshots/synthesis_screenshot_counter.png)
+![Synthesis Screenshot](../screenshots/synthesis_screenshot_counter.png)
 
 
 **Author:** Ram Tripathi
