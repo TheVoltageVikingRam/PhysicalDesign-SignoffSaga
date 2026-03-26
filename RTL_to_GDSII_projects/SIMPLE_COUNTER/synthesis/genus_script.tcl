@@ -1,7 +1,10 @@
+set_db init_lib_search_path /home/server2/design_kits/pd_cadence/BlockImplementation231/RAK_23.10_blockImplementation/LIBS/lib/max
 
-set_db init_lib_search_path /home/server2/design_kits/pd_cadence/BlockImplementation231/RAK_23.10_blockImplementation/LIBS/lib/max  #change according to yours
-set_db init_hdl_search_path /home/server2/Music/ram/counter #give your path
+set_db init_hdl_search_path /home/server2/Music/ram/counter
 read_libs {slow.lib leon.lib} 
+
+read_physical -lef /home/server2/design_kits/pd_cadence/BlockImplementation231/RAK_23.10_blockImplementation/LIBS/lef/gsclib045.fixed.lef
+
 
 read_hdl -language v2001 counter.v
 elaborate
@@ -29,12 +32,4 @@ report_qor > reports/report_qor.rpt
 write_hdl > outputs/counter_netlist.v
 write_sdc > outputs/counter_sdc.sdc
 write_sdf -timescale ns -nonegchecks -recrem split -edges check_edge -setuphold split > outputs/delays.sdf
-
-
-
-
-
-
-
-
 
