@@ -1,6 +1,6 @@
 # ####################################################################
 
-#  Created by Genus(TM) Synthesis Solution 23.13-s073_1 on Thu Mar 26 19:07:45 IST 2026
+#  Created by Genus(TM) Synthesis Solution 23.13-s073_1 on Thu Mar 26 22:36:47 IST 2026
 
 # ####################################################################
 
@@ -24,6 +24,5 @@ set_output_delay -clock [get_clocks clk] -add_delay -max 1.0 [get_ports {count[3
 set_output_delay -clock [get_clocks clk] -add_delay -max 1.0 [get_ports {count[2]}]
 set_output_delay -clock [get_clocks clk] -add_delay -max 1.0 [get_ports {count[1]}]
 set_output_delay -clock [get_clocks clk] -add_delay -max 1.0 [get_ports {count[0]}]
-set_wire_load_mode "enclosed"
 set_clock_uncertainty -setup 0.1 [get_clocks clk]
 set_clock_uncertainty -hold 0.1 [get_clocks clk]
