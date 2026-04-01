@@ -18,7 +18,7 @@ SCANCHAINS 1 ;
        count_reg[5] ( IN SI ) ( OUT Q ) 
        count_reg[6] ( IN SI ) ( OUT Q ) 
        count_reg[7] ( IN SI ) ( OUT Q ) 
-    + STOP PIN scan_out
+    + STOP rm_assigns_buf_scan_out A
 ;
 
 END SCANCHAINS 
