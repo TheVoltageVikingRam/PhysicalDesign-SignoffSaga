@@ -18,8 +18,7 @@ read_sdc ../constraints/constraints_top.sdc
 
 set_db dft_scan_style muxed_scan
 set_db dft_prefix dft_
-define_dft shift_enable -name SE -active high -create_port SE
-define_dft test_mode -name TM -active high -create_port TM
+define_test_signal -function shift_enable -name SE  -active high -create_port SE
 check_dft_rules
 
 
@@ -30,6 +29,7 @@ syn_generic
 set_db syn_map_effort medium
 syn_map
 set_db syn_opt_effort medium
+syn_opt
 
 check_dft_rules
 set_db design:counter .dft_min_number_of_scan_chains 1
@@ -38,12 +38,16 @@ define_dft scan_chain -name top_chain -sdi scan_in -sdo scan_out -create_ports
 
 #The following commands are used to remove the assign statements and replace it with BUFX20 
 #in the synthesized netlist
+set_db remove_assigns true
+add_assign_buffer_options -ports scan_out -buffer_or_inverter BUFX20
+
 connect_scan_chains -auto_create_chains
 syn_opt
 
 report_scan_chains > reports/report_dft_chains.rpt
 
 #Outputs
+write_dft_atpg -library ../lib/slow_vddd1v0_basiccells.v
 
 write_hdl > outputs/counter_netlist_dft.v
 write_sdc > outputs/counter_sdc_dft.sdc
