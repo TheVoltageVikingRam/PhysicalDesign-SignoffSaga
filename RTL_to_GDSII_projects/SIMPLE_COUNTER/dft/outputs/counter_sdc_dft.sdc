@@ -1,6 +1,6 @@
 # ####################################################################
 
-#  Created by Genus(TM) Synthesis Solution 23.13-s073_1 on Wed Apr 01 12:01:10 IST 2026
+#  Created by Genus(TM) Synthesis Solution 23.13-s073_1 on Wed Apr 01 13:08:18 IST 2026
 
 # ####################################################################
 
@@ -24,5 +24,6 @@ set_output_delay -clock [get_clocks clk] -add_delay -max 1.0 [get_ports {count[3
 set_output_delay -clock [get_clocks clk] -add_delay -max 1.0 [get_ports {count[2]}]
 set_output_delay -clock [get_clocks clk] -add_delay -max 1.0 [get_ports {count[1]}]
 set_output_delay -clock [get_clocks clk] -add_delay -max 1.0 [get_ports {count[0]}]
+set_dont_touch [get_cells rm_assigns_buf_scan_out]
 set_clock_uncertainty -setup 0.1 [get_clocks clk]
 set_clock_uncertainty -hold 0.1 [get_clocks clk]
