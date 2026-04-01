@@ -1,0 +1,18 @@
+Reporting 1 scan chain (muxed_scan)
+ 
+Chain 1: top_chain 
+  scan_in:      scan_in 
+  scan_out:     scan_out   
+  shift_enable: SE (active high) 
+  clock_domain: clk (edge: rise)
+  length: 8
+    bit 1 	count_reg[0]  <clk (rise)>  
+    bit 2 	count_reg[1]  <clk (rise)>  
+    bit 3 	count_reg[2]  <clk (rise)>  
+    bit 4 	count_reg[3]  <clk (rise)>  
+    bit 5 	count_reg[4]  <clk (rise)>  
+    bit 6 	count_reg[5]  <clk (rise)>  
+    bit 7 	count_reg[6]  <clk (rise)>  
+    bit 8 	count_reg[7]  <clk (rise)>  
+------------------------
+
