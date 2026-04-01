@@ -1,7 +1,7 @@
 (DELAYFILE
   (SDFVERSION  "OVI 3.0")
   (DESIGN      "counter")
-  (DATE        "Wed Apr 01 12:01:11 IST 2026")
+  (DATE        "Wed Apr 01 13:08:19 IST 2026")
   (VENDOR      "Cadence, Inc.")
   (PROGRAM     "Genus(TM) Synthesis Solution")
   (VERSION     "23.13-s073_1")
@@ -20,8 +20,8 @@
           (PORT D (::0.000))
           (PORT SI (::0.000))
           (PORT SE (::0.000))
-          (IOPATH RN Q () (::0.164))
-          (IOPATH CK Q (::0.368) (::0.354))
+          (IOPATH RN Q () (::0.188))
+          (IOPATH CK Q (::0.390) (::0.378))
         )
      )
      (TIMINGCHECK
@@ -79,7 +79,7 @@
         (ABSOLUTE
           (PORT A (::0.000))
           (PORT B (::0.000))
-          (IOPATH A Y (::0.314) (::0.301))
+          (IOPATH A Y (::0.333) (::0.321))
           (IOPATH B Y (::0.220) (::0.231))
         )
      )
@@ -361,6 +361,16 @@
         (ABSOLUTE
           (PORT A (::0.000))
           (IOPATH A Y (::0.213) (::0.209))
+        )
+     )
+  )
+  (CELL
+     (CELLTYPE "BUFX20")
+     (INSTANCE rm_assigns_buf_scan_out)
+     (DELAY
+        (ABSOLUTE
+          (PORT A (::0.000))
+          (IOPATH A Y (::0.181) (::0.182))
         )
      )
   )
