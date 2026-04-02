@@ -1,5 +1,7 @@
 # DFT — Simple 8-bit Counter
 
+![Synthesized after DFT](../screenshots/synthesized_after_dft.png)
+
 Design-for-Test (DFT) implementation of the 8-bit counter using **Cadence Genus Synthesis Solution 23.13** with muxed-scan insertion targeting the **GPDK045** (`gsclib045`) standard-cell library.
 
 ---
@@ -55,8 +57,8 @@ The script `genus_dft_script.tcl` runs the full Genus flow in order:
 
 ## Timing (GPDK045, slow corner)
 
-| Cell         | CK→Q rise (ns) | CK→Q fall (ns) | Setup D↑ (ns) | Hold SE↑ (ns) |
-|--------------|---------------|----------------|---------------|---------------|
+| Cell | CK→Q rise (ns) | CK→Q fall (ns) | Setup D↑ (ns) | Hold SE↑ (ns) |
+|------|---------------|----------------|---------------|---------------|
 | `count_reg[0]` (SDFFRHQX1) | 0.403 | 0.392 | 0.235 | 0.000 |
 | `count_reg[1–6]` (SDFFRHQX1) | 0.374 | 0.361 | 0.217 | 0.000 |
 | `count_reg[7]` (SDFFRHQX1) | 0.390 | 0.378 | 0.217 | 0.000 |
