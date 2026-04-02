@@ -1,5 +1,7 @@
 # Equivalency Checking — Simple 8-bit Counter
 
+![Equivalency Checking](screenshots/Equivalency_checking.png)
+
 Formal Logic Equivalence Checking (LEC) using **Cadence Conformal LEC** to verify that the post-DFT gate-level netlist (`counter_netlist_dft.v`) is functionally equivalent to the original RTL (`counter.v`).
 
 ---
