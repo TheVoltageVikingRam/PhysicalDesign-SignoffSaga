@@ -52,8 +52,6 @@ add compared points -all   ;# fix: was "add compard point" in original
 compare
 ```
 
-> **Note:** The original dofile has a typo — `add compard point -all`. Correct it to `add compared points -all` before re-running.
-
 ---
 
 ## Verification Results
