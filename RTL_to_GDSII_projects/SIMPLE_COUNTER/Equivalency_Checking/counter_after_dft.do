@@ -11,6 +11,6 @@ add ignored inputs scan_in -revised
 add ignored outputs scan_out -revised
 
 set system mode lec
-add compard point -all
+add compared point -all
 compare
 
