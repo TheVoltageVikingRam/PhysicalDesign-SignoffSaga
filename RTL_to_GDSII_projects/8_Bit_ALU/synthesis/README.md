@@ -18,7 +18,7 @@ genus -files genus_script.tcl
 - Clock transition: 0.1 ns (rise/fall)
 
 ### Results
-
+Note: The delays.sdf file couldn't be added here due to size issues.
 #### Timing
 | Parameter           | Value             |
 |---------------------|-------------------|
