@@ -5,6 +5,9 @@ Synthesized using Cadence Genus 23.13 with GPDK045 (45nm) technology library.
 ```bash
 genus -files genus_script.tcl
 ```
+### Synthesized Netlist
+
+![Synthesized Netlist RTL Schematic](../screenshots/genus_synthesis_output.png)
 
 ### Constraints
 
