@@ -33,8 +33,8 @@ initial begin
 
 	clk = 0; rst_n = 0; en = 0;
 	A = 0; B = 0; op_code = 3'b000;
-	$monitor("T=%0t | op=%0d A=%0d B=%0d | wide=%0d result=%0d carry=%b zero=%b",
-        $time, op_code, A, B, uut.wide, result_out, flag_carry, flag_zero);    
+	$monitor("T=%0t | op=%0d A=%0d B=%0d |  result=%0d carry=%b zero=%b",
+        $time, op_code, A, B,  result_out, flag_carry, flag_zero);    
 
 
 	//hold reset for one full cycle
