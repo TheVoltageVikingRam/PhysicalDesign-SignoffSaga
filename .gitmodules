@@ -1,3 +1,6 @@
 [submodule "RTL_to_GDSII_projects/communication-protocols"]
 	path = RTL_to_GDSII_projects/communication-protocols
 	url = https://github.com/TheVoltageVikingRam/communication-protocols.git
+[submodule "RTL_to_GDSII_projects/4.communication-protocols"]
+	path = RTL_to_GDSII_projects/4.communication-protocols
+	url = https://github.com/TheVoltageVikingRam/communication-protocols.git
