@@ -25,4 +25,4 @@ assign clk_o = clk_i & clk_en;
 
 endmodule
 
-##this system verilog module implements a clock gating cell , a critical component in digitl design used to reduce power consumption by disabling the clock signal for logic blocks that are not currently in use.
+//this system verilog module implements a clock gating cell , a critical component in digitl design used to reduce power consumption by disabling the clock signal for logic blocks that are not currently in use.
