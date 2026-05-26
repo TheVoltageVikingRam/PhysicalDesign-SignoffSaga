@@ -1,0 +1,5 @@
+RTL_to_GDSII_projects/3.DTMF_Receiver/genus_labs/rtl/
+RTL_to_GDSII_projects/3.DTMF_Receiver/MMMC_Flow/RTL/
+*.swp
+*.faildft
+*.soln
