@@ -7,13 +7,13 @@ define_clock -p 6000 -name m_clk [get_db hpins TEST_CONTROL_INST/m_clk]
 define_clock -p 12000 -name m_rcc_clk [get_db hpins TEST_CONTROL_INST/m_rcc_clk]
 define_clock -p 12000 -name m_spi_clk [get_db hpins TEST_CONTROL_INST/m_spi_clk]
 define_clock -p 12000 -name m_dsram_clk [get_db hpins TEST_CONTROL_INST/m_dsram_clk]
-define_clock -p 12000 -name m_ram_Clk [get_db hpins TEST_CONTROL_INST/m_ram_Clk]
-define_clock -p 12000 -name m_digit_Clk [get_db hpins TEST_CONTROL_INST/m_digit_Clk]
+define_clock -p 12000 -name m_ram_clk [get_db hpins TEST_CONTROL_INST/m_ram_clk]
+define_clock -p 12000 -name m_digit_clk [get_db hpins TEST_CONTROL_INST/m_digit_clk]
 
 
 set_db [get_db clocks m*] .clock_source_late_latency 2000
 set_db [get_db clocks m*] .clock_network_late_latency 2000
-set_db [get_db clocks *] .clock_Setup_uncertainty 250
+set_db [get_db clocks *] .clock_setup_uncertainty 250
 
 #Apply external delays
 external_delay -input 500 -clock refclk [all_inputs]
