@@ -16,22 +16,21 @@ set MSGS_TO_BE_SUPRESSED {LBR-58 LBR-40 LBR-41 VLOGPT-35}
 
 set LIB_LIST { \
 ss_g_1v08_125c.lib \
-ss_hvt_1v08_125x.lib \
+ss_hvt_1v08_125c.lib \
 ram_256x16A_slow_syn.lib \
-rom_512x16A_slow_Syn.lib \
-pllclk_slow.lib
+rom_512x16A_slow_syn.lib \
+pllclk_slow.lib \
 
 }
 
 
 set LEF_LIST { \
-
 tsmc13fsg_8lm_tech.lef \
 tsmc13g_m_macros.lef \
 tsmc13hvt_m_macros.lef \
-pllclk.lef
+pllclk.lef \
 ram_256X16A.lef \
-rom_512X16A.lef \
+rom_512x16A.lef \
 tpz013g2_7lm.lef \
 
 }
@@ -81,7 +80,7 @@ set_db lp_power_unit mW
 set_db init_lib_search_path $LIB_PATH
 set_db script_search_path $TCL_PATH 
 set_db init_hdl_search_path $RTL_PATH
-set_db error_on_lib_lef_pin_incosistency true 
+set_db error_on_lib_lef_pin_inconsistency true 
 
 # set_db library $LIB_LIST
 
