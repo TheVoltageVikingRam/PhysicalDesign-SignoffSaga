@@ -87,7 +87,7 @@ power_manager.v \
 }
 
 
-# set CAP_TABLE_FILE ../libraries/tsmc12fsg.capTbl 
+# set CAP_TABLE_FILE ../libraries/tsmc13fsg.capTbl 
 set QRC_TECH_FILE ../QRC/t018s6mm.tch
 suppress_messages {LBR-30 LBR-31 LBR-40 LBR-41 LBR-72 LBR-77 LBR-162}
 set_db lp_power_unit mW
