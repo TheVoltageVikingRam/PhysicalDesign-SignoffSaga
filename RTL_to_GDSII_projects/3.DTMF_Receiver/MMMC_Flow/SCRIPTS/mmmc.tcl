@@ -33,7 +33,7 @@ create_opcond -name op_cond_wcl_typical -process 1 -voltage 1.2 -temperature 25
 
 create_timing_condition -name timing_cond_wcl_slow -opcond op_cond_wcl_slow -library_sets { wcl_slow }
 create_timing_condition -name timing_cond_wcl_fast -opcond op_cond_wcl_fast -library_sets { wcl_fast }
-create_timing_condition -name timing_Cond_wcl_typical -opcond op_cond_wcl_typical -library_sets { wcl_typical }
+create_timing_condition -name timing_cond_wcl_typical -opcond op_cond_wcl_typical -library_sets { wcl_typical }
 
 
 create_rc_corner -name rc_corner -cap_table ../Captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl 
@@ -49,8 +49,8 @@ create_delay_corner -name delay_corner_wcl_fast -early_timing_condition timing_c
 
 
 
-create_delay_corner -name delay_corner_wcl_typicl -early_timing_condition timing_cond_wcl_typical \
-                    -late_timing_condition timing_Cond_wcl_typical -early_rc_corner rc_corner \
+create_delay_corner -name delay_corner_wcl_typical -early_timing_condition timing_cond_wcl_typical \
+                    -late_timing_condition timing_cond_wcl_typical -early_rc_corner rc_corner \
                     -late_rc_corner rc_corner 
 
 
