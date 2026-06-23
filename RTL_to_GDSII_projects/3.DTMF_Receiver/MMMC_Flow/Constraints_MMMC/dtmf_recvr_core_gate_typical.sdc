@@ -13,7 +13,7 @@ create_clock -name "m_clk" -add -period 6.0 -waveform {0.0 3.0} [get_pins TEST_C
 create_clock -name "m_rcc_clk" -add -period 16.0 -waveform {0.0 8.0} [get_pins TEST_CONTROL_INST/m_rcc_clk]
 create_clock -name "m_spi_clk" -add -period 16.0 -waveform {0.0 8.0} [get_pins TEST_CONTROL_INST/m_spi_clk]
 create_clock -name "m_dsram_clk" -add -period 16.0 -waveform {0.0 8.0} [get_pins TEST_CONTROL_INST/m_dsram_clk]
-create_clock -name "m_ram_clk" -add -period 16.0 -waveform {0.0 8.o} [get_pins TEST_CONTROL_INST/m_ram_clk]
+create_clock -name "m_ram_clk" -add -period 16.0 -waveform {0.0 8.0} [get_pins TEST_CONTROL_INST/m_ram_clk]
 create_clock -name "m_digit_clk" -add -period 16.0 -waveform {0.0 8.0} [get_pins TEST_CONTROL_INST/m_digit_clk]
 create_clock -name "clk2x" -add -period 6.0 -waveform {0.0 3.0} [get_pins PLLCLK_INST/clk2x]
 set_false_path -from [ list \
