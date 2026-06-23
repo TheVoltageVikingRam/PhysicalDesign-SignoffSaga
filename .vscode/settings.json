@@ -1,0 +1,20 @@
+{
+  "[tcl]": {
+    "editor.formatOnType": false,
+    "editor.formatOnSave": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.wordBasedSuggestions": "currentDocument"
+  },
+  "[sdc]": {
+    "editor.formatOnType": false,
+    "editor.formatOnSave": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.wordBasedSuggestions": "currentDocument"
+  },
+  "[verilog]": {
+    "editor.formatOnType": false,
+    "editor.formatOnSave": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.wordBasedSuggestions": "currentDocument"
+  }
+}
