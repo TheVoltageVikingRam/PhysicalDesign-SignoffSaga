@@ -89,5 +89,5 @@ read_libs $LIB_LIST
 #set_db lef_library $LEF_LIST
 read_physical -lef $LEF_LIST
 
-#set_db cap_table_file $CAP_TABLE_FILE
-#set_db qrc_tech_file $QRC_TECH_FILE
+# set_db cap_table_file $CAP_TABLE_FILE
+# set_db qrc_tech_file $QRC_TECH_FILE

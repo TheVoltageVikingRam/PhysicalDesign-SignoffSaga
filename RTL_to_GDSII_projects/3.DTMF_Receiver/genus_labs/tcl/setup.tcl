@@ -39,6 +39,7 @@ tpz013g2_7lm.lef \
 #Baseline RTL
 
 set RTL_LIST {  \
+accum_stat.v \
 alu_32.v \
 arb.v \
 data_bus_mach.v \
