@@ -28,12 +28,12 @@ if {![file exists ${_REPORTS_PATH}]} {
 }
 
 
-set rtlDir ../rtlDir
+set rtlDir ../RTL 
 set_db init_lib_search_path {. ../}
 set_db script_search_path { . }
 set_db init_hdl_search_path {. ../RTL}
 
-set_db max_cpu_per_server 8 
+set_db max_cpus_per_server 8 
 set_db syn_generic_effort $SYN_EFF
 set_db syn_map_effort $MAP_EFF
 set_db syn_opt_effort $OPT_EFF
@@ -49,6 +49,7 @@ set rtlList " \
 ${rtlDir}/pllclk.v      \
 ${rtlDir}/accum_stat.v      \
 ${rtlDir}/alu_32.v      \
+${rtlDir}/arb.v         \
 ${rtlDir}/data_bus_mach.v      \
 ${rtlDir}/data_sample_mux.v      \
 ${rtlDir}/decode_i.v      \
@@ -125,7 +126,15 @@ puts "Runtime & Memory after 'syn_generic' "
 time_info GENERIC 
 
 syn_map 
- ## generate reports to save the innvous stats
+write_snapshot -directory $_OUTPUTS_PATH -tag syn_map
+report_summary -directory $_REPORTS_PATH
+puts "Runtime and Mmemory after 'syn_map'"
+time_info MAPPED
+
+syn_opt
+
+
+## generate reports to save the innvous stats
 
  write_snapshot -innovus -directory $_OUTPUTS_PATH -tag syn_opt 
  report_summary -directory $_REPORTS_PATH 
