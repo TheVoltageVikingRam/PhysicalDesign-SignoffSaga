@@ -36,7 +36,7 @@ create_timing_condition -name timing_cond_wcl_fast -opcond op_cond_wcl_fast -lib
 create_timing_condition -name timing_Cond_wcl_typical -opcond op_cond_wcl_typical -library_sets { wcl_typical }
 
 
-create_rc_corner -name rc_corner -cap_table ../Captable/cln28hpl_lp10m+alrdl_5x2yu2yz_typical.capTbl 
+create_rc_corner -name rc_corner -cap_table ../Captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl 
 
 create_delay_corner -name delay_corner_wcl_slow -early_timing_condition timing_cond_wcl_slow \
                     -late_timing_condition timing_cond_wcl_slow -early_rc_corner rc_corner \
@@ -49,7 +49,7 @@ create_delay_corner -name delay_corner_wcl_fast -early_timing_condition timing_c
 
 
 
-create_delay_corner -name delay_corner_wcl_typicl -early_timing_condition timing_Cond_wcl_typical \
+create_delay_corner -name delay_corner_wcl_typicl -early_timing_condition timing_cond_wcl_typical \
                     -late_timing_condition timing_Cond_wcl_typical -early_rc_corner rc_corner \
                     -late_rc_corner rc_corner 
 
@@ -76,6 +76,6 @@ create_constraint_mode -name functional_wcl_typical -sdc_files { \
 
 create_analysis_view -name view_wcl_slow -constraint_mode functional_wcl_slow -delay_corner delay_corner_wcl_slow
 create_analysis_view -name view_wcl_fast -constraint_mode functional_wcl_fast -delay_corner delay_corner_wcl_fast 
-create_analysis_view -name view_wcl_typical -constraint_mode functional_wcl_typical -delay_corner delay_corner_wcl_typicl 
+create_analysis_view -name view_wcl_typical -constraint_mode functional_wcl_typical -delay_corner delay_corner_wcl_typical 
 
 set_analysis_view -setup {view_wcl_slow view_wcl_fast view_wcl_typical}
