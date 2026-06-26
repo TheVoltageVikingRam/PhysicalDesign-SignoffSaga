@@ -28,3 +28,9 @@ set_db script_search_path { . }  ; #Path specifying the location of scripts
 set_db syn_generic_effort $GEN_EFF
 set_db syn_map_effort $MAP_EFF
 
+set _OUTPUTS_PATH iSpatial_outputs ; #Directory name for output
+set _REPORTS_PATH iSpatial_reports ; #Directory name for reports
+set _LOGS_PATH iSpatial_logs ; #Setting directory name for logs
+
+#Creating directory name for outputs, reports and logs if not present already based on the variables set at the initial stage 
+
