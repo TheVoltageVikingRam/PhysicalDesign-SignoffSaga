@@ -148,7 +148,7 @@ set rtl_list " \
 ##############
 
         read_def -fuzzy_match ../DEF/fp.def 
-        checl_floorplan -detailed 
+        check_floorplan -detailed 
 
 
 
@@ -174,7 +174,7 @@ set rtl_list " \
 
                 }
                 define_cost_group -name I2O -design $DESIGN
-                path_group -from [all_inputs] -to [all_outputd] -group I2O -name I2O -view $view 
+                path_group -from [all_inputs] -to [all_outputs] -group I2O -name I2O -view $view 
         }
 
         #Report timing with cost group
