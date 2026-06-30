@@ -21,7 +21,7 @@ create_library_set \
 #                [list \
                     [get_db lib_dir]/gsclib045/timing/fast_vdd1v2_basicCells.lib        \
 
-                ]
+ #               ]
 
 #############################################################################
 # OPERATING CONDITIONS
@@ -31,8 +31,8 @@ create_opcond   \
     -name       max \
     -process    1 \
     -voltage    1.08    \
-    -temperatures   125
-#creat_opcond \
+    -temperature   125
+#create_opcond \
 #   -name       min \
 #   -process    1 \
 #   -voltage    1.32 \
@@ -44,7 +44,7 @@ create_opcond   \
 ######################################################################
 
 create_timing_condition \
-    -name   slow\
+    -name   slow \
     -library_sets   [list PVT_1P08V_125C ]  \
     -opcond     max 
 
@@ -58,7 +58,7 @@ create_timing_condition \
 ############################################################
 ##  RC CORNERS
 ############################################################
-create rc_corner    \
+create_rc_corner    \
     -name   rc_max \
     -temperature    125 \
     -qrc_tech       ../LIB/qrcTechFile
