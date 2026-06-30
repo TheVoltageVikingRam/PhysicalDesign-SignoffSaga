@@ -163,13 +163,111 @@ set rtl_list " \
         #Defining cost groups I2C -> Input to register ; C2O -> Register to output ; C2C -> register to register ; I2O -> input to output paths
 
         foreach view [get_db analysis_views -if {.is_setup == true}] {
-            
+                if {[llength [all_registers]] > 0} {
+            define_cost_group -name I2C -design $DESIGN
+            define_cost_group -name C2O -design $DESIGN
+            #We will use the clock cost groups created by the SDCs instead of C2C
+            #define_cost_group -name C2C -design $DESIGN
+            path_group -from [all_registers] -to [all_outputs] -group C2O -name C2O -view $view
+            path_group -from [all_inputs] -to [all_registers] -group I2C -name I2C -view $view
+            #path_group -from [all_registers] -to [all_registers] -group C2C -name C2C -view $view
 
+                }
+                define_cost_group -name I2O -design $DESIGN
+                path_group -from [all_inputs] -to [all_inputs]] -group I2O -name I2O -view $view 
+        }
 
+        #Report timing with cost group
 
-
+        foreach cg [get_db cost_groups *] {
+            report_timing -group [list $cd] >> ${_REPORTS_PATH}/${DESIGN}_pretim.rpt
         }
 
 
+#################################
+## Physical aware synthesis ##
+#################################
+
+syn_generic -physical
+puts "Runtime & Memory after 'syn_generic -physical'"
+time_info GENERIC
 
 
+#Generate a summary for the current stage of synthesis
+
+write_reports -directory $_REPORTS_PATH -lag generic 
+write_db ${_OUTPUTS_PATH}/${DESIGN}_generic.db
+
+
+syn_map -physical
+puts "Runtime and Memory after 'syn_map -physical'"
+
+time_info MAPPED
+
+
+write_reports -directory $_REPORTS_PATH -tag map
+write_db ${_OUTPUTS_PATH}/${DESIGN}_map.db 
+
+#Report timing path with cost group 
+
+foreach cg [get_db cost_groups *] {
+    report_timing -group [list $cg] > $_REPORTS_PATH/${DESIGN}_[vbasename $cg]_post_map.rpt 
+
+}
+
+#LEC Verification
+
+write_do_design -golden_design rtl -revised_design fv_map -no_exit -logfile ${_LOG_PATH}/rtl_2_fv_map.lec.log  > ${_OUTPUTS_PATH}/rtl_2_fv_map.lec.do 
+
+#####################################################################################################
+## DB Handoff to Innovus preCTS
+####################################################################################################
+
+#The file invs2genus_final_db is saved in invs_temp_dir
+
+#We should specify the temp directory which contains Innovus Interface files generated during syn_opt -spatial, using the attribute invs_temp_dir.
+
+# If not set the temp dir is deleted after syn_opt run
+
+
+####################################
+## iSpatial Synthesis  ##
+####################################
+
+syn_opt -spatial
+puts "Runtime and memory after 'syn_opt -spatial'"
+time_info ISPATIAL 
+
+########################
+## WRITE REPORTS ##
+########################
+
+report_message > $_REPORTS_PATH/${DESIGN}_messages.rpt     ; # Summarizes the information , Warnings, Errors issued by Genus in the current run since last report
+report_gates > $_REPORTS_PATH/${DESIGN}_gates.rpt       ; # Reports the technology library cells that were implemented  
+report_power > $_REPORTS_PATH/${DESIGN}_power.rpt      ; # Reports the leakage power and dynamic power
+write_reports -directory $_REPORTS_PATH -tag final          ; # Generate reports from Genus session
+
+#LEC Verification
+
+write_do_lec -golden_design fv_map -revised_design ${_OUTPUTS_PATH}/final/${DESIGN}.v.gz -no_exit -logfile  ${_LOG_PATH}/fv_map_2_final.lec.log > ${_OUTPUTS_PATH}/fv_map_2_final.lec.do
+
+
+##################################################################################################
+
+## Netlist handoff to Innovus preCTS
+
+##################################################################################################
+
+
+write_db -common INVS -design dtmf_recvr_core
+
+puts "Final Runtime & Memory"
+
+time_info FINAL
+puts "==================================="
+puts "Synthesis Finished  ..............."
+puts "==================================="
+
+file copy [get_db stdout_log]  ${_LOG_PATH}/.
+
+# QUIT
