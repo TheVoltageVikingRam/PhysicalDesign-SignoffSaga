@@ -217,7 +217,7 @@ foreach cg [get_db cost_groups *] {
 
 #LEC Verification
 
-write_do_design -golden_design rtl -revised_design fv_map -no_exit -logfile ${_LOG_PATH}/rtl_2_fv_map.lec.log  > ${_OUTPUTS_PATH}/rtl_2_fv_map.lec.do 
+write_do_lec -golden_design rtl -revised_design fv_map -no_exit -logfile ${_LOG_PATH}/rtl_2_fv_map.lec.log  > ${_OUTPUTS_PATH}/rtl_2_fv_map.lec.do 
 
 #####################################################################################################
 ## DB Handoff to Innovus preCTS
