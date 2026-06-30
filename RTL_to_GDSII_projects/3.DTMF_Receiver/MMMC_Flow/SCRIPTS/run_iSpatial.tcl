@@ -95,10 +95,80 @@ read_physical -lefs [gsclib045_tech.lef gsclib045_macro.lef pllclk.lef CDK_S128x
 
 
 puts "Now load RTL"
+set rtl_list " \
+    pllclk.v \
+    accum_stat.v \
+    alu_32.v \
+    arb.v \
+    data_bus_mach.v \
+    data_sample_mux.v \
+    decode_i.v \
+    decoder.v \
+    digit_reg.v \
+    conv_subreg.v \
+    dma.v \
+    dtmf_recvr_core.v \
+    execute_i.v \
+    m16x16.v \
+    mult_32_dp.v \
+    port_bus_mach.v \
+    prog_bus_mach.v \
+    results_conv.v \
+    spi.v \
+    tdsp_core_glue.v \
+    tdsp_core_mach.v \
+    tdsp_core.v \
+    tdsp_data_mux.v \
+    tdsp+ds_cs.v \
+    test_control.v \
+    ulaw_lin_conv.v \
+    power_manager.v \
+    macro_bb_rtl/ram_128x16_test.v \
+    macro_bb_rtl/ram_256x16_test.v \
+"
+
+    #Reading hdl files and elaborating the design 
+
+    read_hdl $rtl_list 
+    elaborate $DESIGN
+    puts "Runtime & Mmeory 'read_hdl"
+    time_info Elaboration 
+
+    init_design
+    puts "The number of exceptions is [llength [vfind /designs/$DESIGN -exception *]]"
+    
+    check_design -unresolved 
+    check_timing_intent 
+    report_ple > ${_REPORTS_PATH}/ple.rpt ; # Reports the Physical layout estimation report  from lef and QRC tech file
+
+
+
+##############
+## Read DEF ##
+##############
+
+        read_def -fuzzy_match ../DEF/fp.def 
+        checl_floorplan -detailed 
 
 
 
 
+###############################################################################
+## Cost Group Setting (clock-clock, clock-output. input-clock, input-output) ##
+################################################################################
+
+        # Uncomment to remove already existing costgrups before creating new ones.
+        # delete_obj [vfind /designs/* --cost_group *]
+
+        #Defining cost groups I2C -> Input to register ; C2O -> Register to output ; C2C -> register to register ; I2O -> input to output paths
+
+        foreach view [get_db analysis_views -if {.is_setup == true}] {
+            
+
+
+
+
+        }
 
 
 
