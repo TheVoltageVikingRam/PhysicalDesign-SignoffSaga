@@ -30,7 +30,7 @@ set_db syn_map_effort $MAP_EFF
 
 set _OUTPUTS_PATH iSpatial_outputs ; #Directory name for output
 set _REPORTS_PATH iSpatial_reports ; #Directory name for reports
-set _LOGS_PATH iSpatial_logs ; #Setting directory name for logs
+set _LOG_PATH iSpatial_logs ; #Setting directory name for logs
 
 #Creating directory name for outputs, reports and logs if not present already based on the variables set at the initial stage 
 if {![file exists ${_LOG_PATH}]} {
@@ -84,7 +84,7 @@ set_db opt_spatial_effort extreme
 
 
 read_mmmc ../SCRIPTS/mmmc_iSpatial.tcl
-read_physical -lefs [gsclib045_tech.lef gsclib045_macro.lef pllclk.lef CDK_S128x16.lef CDK_S256x16.lef CDK_R512x16.lef}
+read_physical -lefs {gsclib045_tech.lef gsclib045_macro.lef pllclk.lef CDK_S128x16.lef CDK_S256x16.lef CDK_R512x16.lef}
 
 
 #########################################
@@ -119,7 +119,7 @@ set rtl_list " \
     tdsp_core_mach.v \
     tdsp_core.v \
     tdsp_data_mux.v \
-    tdsp+ds_cs.v \
+    tdsp_ds_cs.v \
     test_control.v \
     ulaw_lin_conv.v \
     power_manager.v \
@@ -174,13 +174,13 @@ set rtl_list " \
 
                 }
                 define_cost_group -name I2O -design $DESIGN
-                path_group -from [all_inputs] -to [all_inputs]] -group I2O -name I2O -view $view 
+                path_group -from [all_inputs] -to [all_outputd] -group I2O -name I2O -view $view 
         }
 
         #Report timing with cost group
 
         foreach cg [get_db cost_groups *] {
-            report_timing -group [list $cd] >> ${_REPORTS_PATH}/${DESIGN}_pretim.rpt
+            report_timing -group [list $cg] >> ${_REPORTS_PATH}/${DESIGN}_pretim.rpt
         }
 
 
@@ -195,7 +195,7 @@ time_info GENERIC
 
 #Generate a summary for the current stage of synthesis
 
-write_reports -directory $_REPORTS_PATH -lag generic 
+write_reports -directory $_REPORTS_PATH -tag generic 
 write_db ${_OUTPUTS_PATH}/${DESIGN}_generic.db
 
 
