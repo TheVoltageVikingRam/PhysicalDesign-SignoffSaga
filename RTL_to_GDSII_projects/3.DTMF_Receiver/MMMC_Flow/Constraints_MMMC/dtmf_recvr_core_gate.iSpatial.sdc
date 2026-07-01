@@ -409,6 +409,9 @@ set_output_delay -clock [get_clocks m_digit_clk] -add_delay 0.3 [get_ports {tdig
 set_output_delay -clock [get_clocks m_digit_clk] -add_delay 0.3 [get_ports {tdigit[6]}]
 set_output_delay -clock [get_clocks m_digit_clk] -add_delay 0.3 [get_ports {tdigit[7]}]
 
+set_max_fanout 15.000 [current_design]
+set_max_transition 1.2 [current_design]
+
 
 
 
