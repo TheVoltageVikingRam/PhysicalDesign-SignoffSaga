@@ -1,0 +1,67 @@
+  =================
+   Message Summary
+  =================
+-----------------------------------------------------------------------------------------------------------------------------------------
+|   Id    |  Sev  |Count|                                                 Message Text                                                  |
+-----------------------------------------------------------------------------------------------------------------------------------------
+|CFM-1    |Info   |    2|Wrote dofile.                                                                                                  |
+|CFM-5    |Info   |    1|Wrote formal verification information.                                                                         |
+|GLO-51   |Info   |    3|Hierarchical instance automatically ungrouped.                                                                 |
+|         |       |     |Hierarchical instances can be automatically ungrouped to allow for better area or timing optimization. To      |
+|         |       |     | prevent this ungroup, set the root-level attribute 'auto_ungroup' to 'none'. You can also prevent individual  |
+|         |       |     | ungroup with setting the attribute 'ungroup_ok' of instances or modules to 'false'.                           |
+|INVS-8   |Info   |    1|Innovus executable found.                                                                                      |
+|         |       |     |The specified Innovus executable will be used for the Innovus batch jobs.                                      |
+|INVS-13  |Info   |    1|The design has been changed by Innovus.                                                                        |
+|         |       |     |The design was changed during QoS prediction. This may include netlist structural changes.                     |
+|INVS-18  |Info   |    1|The following executable version was used for the Innovus session.                                             |
+|         |       |     |The specified Innovus version was used for the Innovus batch job.                                              |
+|LBR-38   |Warning|    1|Libraries have inconsistent nominal operating conditions. In the Liberty library, there are attributes called  |
+|         |       |     | nom_voltage, nom_process and nom_temperature. Genus reports the message, if the respective values of the 2    |
+|         |       |     | given .libs differ.                                                                                           |
+|         |       |     |This is a common source of delay calculation confusion and should be avoided.                                  |
+|LBR-40   |Info   |    1|An unsupported construct was detected in this library.                                                         |
+|         |       |     |Check to see if this construct is really needed for synthesis. Many liberty constructs are not actually        |
+|         |       |     | required.                                                                                                     |
+|LBR-109  |Info   |    1|Set default library domain.                                                                                    |
+|LBR-141  |Warning|   16|Clock function definition makes cell unusable.                                                                 |
+|         |       |     |The sequential cell cannot be inferred because its clock function is unknown.                                  |
+|LBR-168  |Warning|    1|Invalid library establishment.                                                                                 |
+|         |       |     |Establish library after setting the default library domain.                                                    |
+|LBR-412  |Info   |    5|Created nominal operating condition.                                                                           |
+|         |       |     |The nominal operating condition is represented, either by the nominal PVT values specified in the library      |
+|         |       |     | source (via nom_process,nom_voltage and nom_temperature respectively)                                         |
+|         |       |     | , or by the default PVT values (1.0,1.0,1.0).                                                                 |
+|LBR-516  |Info   |    1|Missing library level attribute.                                                                               |
+|LBR-518  |Info   |    3|Missing a function attribute in the output pin definition.                                                     |
+|MESG-11  |Warning|   17|Maximum message print count reached.                                                                           |
+|PHYS-12  |Warning|    1|The variant range of wire parameters is too large. An example of wire parameters are, a WIDTH for layer, PITCH |
+|         |       |     | for layer, MINSPACING for layers, etc.                                                                        |
+|         |       |     |Check the consistency of the parameters, and see if you can ignore this message or you're using different LEF  |
+|         |       |     | file with wrong parameters.                                                                                   |
+|PHYS-25  |Warning|   10|Minimum width of layer in LEF does not match minimum width of layer in cap table.                              |
+|         |       |     |Compare the layer MinWidth of the cap_table_file with the MinWidth (WIDTH)                                     |
+|         |       |     | of the corresponding layer in LEF. Set the attribute 'shrink_factor' to adjust the MinWidth layer value in the|
+|         |       |     | captable file                                                                                                 |
+|PHYS-52  |Info   |    1|Physical information has been annotated.                                                                       |
+|         |       |     |The physical information for the design has been prepared and annotated.                                       |
+|PHYS-90  |Info   |    3|Generating design database.                                                                                    |
+|         |       |     |The database contains all the files required to restore the design in the specified application.               |
+|PHYS-256 |Warning|    1|Annotated physical data will be ignored for timing analysis.                                                   |
+|PHYS-262 |Warning|    1|Small lumped capacitance will be ignored.                                                                      |
+|PHYS-279 |Warning|   10|Physical cell not defined in library.                                                                          |
+|         |       |     |Ensure that the proper library files are available and have been imported.                                     |
+|PHYS-1019|Warning|    2|There are settings for use of this physical process that should be reviewed as they are likely inappropriate.  |
+|         |       |     |Review associated messages in log file.                                                                        |
+|PHYS-1025|Warning|    1|Path-groups have been reset before iSpatial.                                                                   |
+|         |       |     |Recreation of path-groups is left to the user after iSpatial for reporting.                                    |
+|RPT-16   |Info   |    1|Joules engine is used.                                                                                         |
+|SYNTH-5  |Info   |    1|Done mapping.                                                                                                  |
+|TIM-45   |Info   |    1|AAE enabled for delay calculation.                                                                             |
+|TIM-501  |Info   |    5|Resetting the break_timing_paths attribute of a pin removes exceptions set on the pin. break_timing_paths      |
+|         |       |     | attribute has default value of false and can be reset to other values either false or clock_gating depends on |
+|         |       |     | the enable signal.                                                                                            |
+|         |       |     |Do the analysis and apply the case analysis on the pin whether you want to break the timing paths or not       |
+|TUI-58   |Info   |    5|Removed object.                                                                                                |
+|TUI-82   |Warning|    1|Enabling message severity downgrade.                                                                           |
+-----------------------------------------------------------------------------------------------------------------------------------------

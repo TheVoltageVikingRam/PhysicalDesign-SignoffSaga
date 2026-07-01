@@ -1,0 +1,51 @@
+
+
+Working Directory = ./work_mmmc
+QoS Summary for dtmf_recvr_core
+==========================================================================================
+Metric                          generic         map             invs            final          
+==========================================================================================
+Slack (ps):                     2,705             473              46              45
+  R2R (ps):                     2,705             473              46              45
+  I2R (ps):                     7,409           7,348        no_value           7,368
+  R2O (ps):                     7,286           7,216        no_value           6,582
+  I2O (ps):                  no_value        no_value        no_value        no_value
+  CG  (ps):                     7,633        no_value        no_value        no_value
+TNS (ps):                           0               0              -0               0
+  R2R (ps):                         0               0              -0               0
+  I2R (ps):                         0               0        no_value               0
+  R2O (ps):                         0               0        no_value               0
+  I2O (ps):                  no_value        no_value        no_value        no_value
+  CG  (ps):                         0        no_value        no_value        no_value
+Failing Paths:                      0               0        no_value               0
+Cell Area:                    230,196         241,590        no_value         241,400
+Total Cell Area:              230,196         241,590         239,298         241,400
+Leaf Instances:                 4,553           4,633           4,489           4,489
+Total Instances:                4,553           4,633           4,489           4,489
+Utilization (%):                 6.13            6.64            6.55            6.53
+Tot. Net Length (um):        no_value        no_value         116,757         111,887
+Avg. Net Length (um):        no_value        no_value              24              23
+Route Overflow H (%):            0.06            0.06            0.00            0.06
+Route Overflow V (%):            0.01            0.01            0.00            0.01
+MBCI(%) (bits/gate) :            0.00            0.00        no_value            0.00
+Norm Cong Hotspot Area:
+  Max Cong:                      0.00            0.00            2.23            2.23
+  Tot Cong:                      0.00            0.00            2.49            2.49
+==========================================================================================
+CPU  Runtime (h:m:s):        00:34:59        00:33:56        00:33:21        00:30:48
+Real Runtime (h:m:s):        00:34:47        00:32:35        00:33:05        00:32:27
+CPU  Elapsed (h:m:s):        00:35:07        00:39:02        00:43:35        00:44:25
+Real Elapsed (h:m:s):        00:34:48        00:37:23        00:42:05        00:42:56
+Memory (MB):                  2304.40         2306.91         4736.93         3785.34
+==========================================================================================
+==========================================================================================
+Flow Settings:
+==========================================================================================
+Total Runtime (h:m:s): 00:42:56
+Total Memory (MB):     3785.34
+Executable Version:    23.13-s073_1
+==========================================================================================
+Total Cell Area =  Cell Area + Physical Cell Area
+Total Instances =  Leaf Instances + Physical Instances
+
+
