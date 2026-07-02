@@ -2,7 +2,7 @@
 
 if  {[file exists /proc/cpuinfo]} {
     sh grep "model name" /proc/cpuinfo
-    sh grep "cpu MHz"    /proc/cpuinfo
+    sh grep "cpu MHz" /proc/cpuinfo
 }
 
 
@@ -64,5 +64,4 @@ if {![file exists ${_OUTPUTS_PATH}]} {
     puts "Creating directory ${_OUTPUTS_PATH}"
 
 }
-
 
