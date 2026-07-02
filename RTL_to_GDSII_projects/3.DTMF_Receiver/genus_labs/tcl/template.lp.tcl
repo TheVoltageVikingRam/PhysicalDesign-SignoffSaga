@@ -2,7 +2,7 @@
 
 if  {[file exists /proc/cpuinfo]} {
     sh grep "model name" /proc/cpuinfo
-    sh grep "cpu MHz" /proc/cpuinfo
+    sh grep "cpu MHz"    /proc/cpuinfo
 }
 
 
@@ -16,13 +16,13 @@ puts "Hostname : [info hostname]"
 include load_etc.tcl 
 
 #####################################################################
-## Present global variables and attributes
+## Preset global variables and attributes
 #####################################################################
 
 source ../tcl/setup.lp.tcl 
 
 set DATE [clock format [clock seconds] -format "%b%d-%T"]
-set _OUTPUT_PATH outputs_${DATE}
+set _OUTPUTS_PATH outputs_${DATE}
 set_db init_lib_search_path $LIB_PATH
 set_db script_search_path "$TCL_PATH ."
 set_db init_hdl_search_path $RTL_PATH
