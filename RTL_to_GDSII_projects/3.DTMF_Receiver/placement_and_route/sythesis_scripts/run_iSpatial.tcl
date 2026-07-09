@@ -16,12 +16,25 @@ puts "Hostname: [info hostname]"
 set DESIGN dtmf_recvr_core      ; #Top Design Name
 set GEN_EFF medium                ; #Effort level during generic synthesis -physcial
 set MAP_EFF high            ; #Effort level during mapping -physical
+set LOCAL_DIR ".."
+set SYNTH_DIR "."
+set TCL_PATH "."
+set REPORTS_PATH "./reports"
+set LIB_PATH "../lib"
+set LEF_PATH "../lef"
+set RTL_PATH "../rtl"
+
+
+
+
+
+
 
 #Set the library search path , script search path and HDL search path
 
-set_db init_lib_search_path {../LIB/gsclib045_v3.5/timing ../LIB/gsclib045_v3.5/lef ../LIB/macro_libs ../LEF/gsclib045_v3.5/lef ../LEF/macro_lefs}   ; # Path will be used for finding libs and lefs
-set_db hdl_search_path {../RTL}   ; # Search path for HDL files
-set_db script_search_path { . }  ; #Path specifying the location of scripts
+set_db init_lib_search_path "$LIB_PATH $LEF_PATH"   ; # Path will be used for finding libs and lefs
+set_db hdl_search_path $RTL_PATH   ; # Search path for HDL files
+set_db script_search_path $TCL_PATH  ; #Path specifying the location of scripts
 
 # Set effort level for syn_generic and syn_map
 
@@ -83,9 +96,8 @@ set_db opt_spatial_effort extreme
 ########################################
 
 
-read_mmmc ../SCRIPTS/mmmc_iSpatial.tcl
-read_physical -lefs {gsclib045_tech.lef gsclib045_macro.lef pllclk.lef CDK_S128x16.lef CDK_S256x16.lef CDK_R512x16.lef}
-
+read_mmmc dtmf_syn.mmmc
+read_physical -lefs {../lef/all.lef}
 
 #########################################
 ## Load Design and Initialize ##
@@ -131,6 +143,22 @@ set rtl_list " \
 
     read_hdl $rtl_list 
     elaborate $DESIGN
+
+
+    set_db [get_db pins PLLCLK_INST/clk1x]  .dft_controllable "PLLCLK_INST/refclk non_inverting"
+
+    set_db dft_scan_style muxed_scan
+
+    define_test_signal -name test_mode -active high -function test_mode test_mode
+    define_test_signal -name scan_en -active high -function shift_enable -default scan_en
+    define_test_clock scan_clk
+
+
+    check_dft_rules > ${_REPORTS_PATH}/${DESIGN}_pre_syn_dft_rules.rpt
+
+
+
+
     puts "Runtime & Mmeory 'read_hdl"
     time_info Elaboration 
 
@@ -147,7 +175,11 @@ set rtl_list " \
 ## Read DEF ##
 ##############
 
-        read_def -fuzzy_match ../DEF/fp.def 
+        read_io_file dtmf.io
+        read_floorplan dtmf_power_syn.fp
+
+        
+
         check_floorplan -detailed 
 
 
@@ -203,6 +235,30 @@ syn_map -physical
 puts "Runtime and Memory after 'syn_map -physical'"
 
 time_info MAPPED
+
+# Check dft rules on mapped gate level netlist
+
+check_dft_rules > ${_REPORTS_PATH}/${DESIGN}_post_map_dft_rules.rpt
+
+# preview or configure the scan chains
+
+set_db design:$DESIGN  .dft_min_number_of_scan_chains 2
+
+
+# Physically synthesize and insert scan chains
+
+
+connect_scan_chains -preview
+
+connect_scan_chains
+
+
+report_dft_setup  >  ${_REPORTS_PATH}/${DESIGN}_scansetup.rpt
+report_dft_chains  >  ${_REPORTS_PATH}/${DESIGN}_scan_chains.rpt
+
+
+
+
 
 
 write_reports -directory $_REPORTS_PATH -tag map
