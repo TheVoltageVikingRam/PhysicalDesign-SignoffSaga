@@ -13,7 +13,7 @@ puts "Hostname: [info hostname]"
 
 # Set design name and effort level for various objects
 
-set DESIGN dtmf_recvr_core      ; #Top Design Name
+set DESIGN DTMF_CHIP      ; #Top Design Name
 set GEN_EFF medium                ; #Effort level during generic synthesis -physcial
 set MAP_EFF high            ; #Effort level during mapping -physical
 set LOCAL_DIR ".."
@@ -175,10 +175,7 @@ set rtl_list " \
 ## Read DEF ##
 ##############
 
-        read_io_file dtmf.io
-        read_floorplan dtmf_power_syn.fp
-
-        
+        read_def -fuzzy_match dtmf_power_syn.fp
 
         check_floorplan -detailed 
 
@@ -274,6 +271,9 @@ foreach cg [get_db cost_groups *] {
 #LEC Verification
 
 write_do_lec -golden_design rtl -revised_design fv_map -no_exit -logfile ${_LOG_PATH}/rtl_2_fv_map.lec.log  > ${_OUTPUTS_PATH}/rtl_2_fv_map.lec.do 
+
+
+
 
 #####################################################################################################
 ## DB Handoff to Innovus preCTS
