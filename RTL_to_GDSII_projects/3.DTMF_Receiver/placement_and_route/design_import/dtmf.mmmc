@@ -1,1 +1,1 @@
-#This contains script to be loaded into innovus
+create_library_set -name default_libset_max 
