@@ -1,0 +1,21 @@
+#####################################################
+#
+#	Innovus Command Logging file
+#
+#	Just written to load related files from synthesis for PnR at ease
+####################################################
+
+
+set_db init_netlist_files ../verilog/dtmf_chip_ak.v
+
+set_db init_lef_files ../lef/all.lef
+
+set_db init_power_nets VDD
+set_db init_ground_nets VSS
+set_db init_mmmc_files dtmf.mmmc
+read_mmmc dtmf.mmmc
+read_physical -lef ../lef/all.lef
+read_netlist ../verilog/dtmf_chip_ak.v -top DTMF_CHIP
+init_design
+eval_legacy {set_analysis_view -sync_timing}
+read_def DTMF_CHIP_io.def
