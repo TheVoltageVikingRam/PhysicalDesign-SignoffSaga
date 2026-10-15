@@ -12,7 +12,7 @@ create_rc_corner -name rccorners\
   -post_route_cross_cap 1\
   -pre_route_clock_res 0\
   -pre_route_clock_cap 0\
-  -qrc_tech ../QRC_tech/gpdk045.tch
+  -qrc_tech ../QRC_Tech/gpdk045.tch
 
 create_delay_corner -name max_delay\
   -timing_condition {default_mapping_tc_1}\
